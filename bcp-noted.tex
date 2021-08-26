@@ -1,0 +1,925 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,pdfusetitle,hidelinks}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  paper=A5, % original is about 316 × 225 mm
+  fontsize=12pt,
+  DIV=classic,
+  twoside=semi,
+  parskip=half
+]{scrbook}
+
+\usepackage{gregoriotex}
+
+% Font settings
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{lettrine}
+
+\setmainfont{ArnoPro}[
+  Extension = {.otf},
+  UprightFont = {*-Regular},
+  ItalicFont = {*-Italic},
+  BoldFont = {*-Smbd},
+  BoldItalicFont = {*-SmbdItalic},
+  Numbers={Lowercase,Proportional},
+  UprightFeatures={
+    SizeFeatures={
+      {Size={-8.5},      Font=*-Caption},
+      {Size={8.6-10.99}, Font=*-SmText},
+      {Size={11-14},     Font=*-Regular},
+      {Size={14.1-21.59},Font=*-Subhead},
+      {Size={21.6-35.99},Font=*-Display},
+      {Size={36-},       Font=*-LightDisplay}
+    },
+  },
+  ItalicFeatures={
+    SizeFeatures={
+      {Size={-8.5},      Font=*-ItalicCaption},
+      {Size={8.6-10.99}, Font=*-ItalicSmText},
+      {Size={11-14},     Font=*-Italic},
+      {Size={14.1-21.59},Font=*-ItalicSubhead},
+      {Size={21.6-35.99},Font=*-ItalicDisplay},
+      {Size={36-},       Font=*-LightItalicDisplay}
+    },
+  },
+  BoldFeatures={
+    SizeFeatures={
+      {Size={-8.5},      Font=*-SmbdCaption},
+      {Size={8.6-10.99}, Font=*-SmbdSmText},
+      {Size={11-14},     Font=*-Smbd},
+      {Size={14.1-21.59},Font=*-SmbdSubhead},
+      {Size={21.6-},     Font=*-SmbdDisplay}
+    },
+  },
+  BoldItalicFeatures={
+    SizeFeatures={
+      {Size={-8.5},      Font=*-SmbdItalicCaption},
+      {Size={8.6-10.99}, Font=*-SmbdItalicSmText},
+      {Size={11-14},     Font=*-SmbdItalic},
+      {Size={14.1-21.59},Font=*-SmbdItalicSubhead},
+      {Size={21.6-},     Font=*-SmbdItalicDisplay}
+    },
+  }
+]
+
+% Fallback characters
+\usepackage{newunicodechar}
+\newfontfamily{\fallbackfont}{Brill}
+\DeclareTextFontCommand{\textfallback}{\fallbackfont}
+\newunicodechar{✠}{\textfallback{✠}}
+
+% Headings
+\setkomafont{disposition}{\normalfont\centering}
+\let\raggedchapter\centering
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+% Remove small caps following lettrine; make initial height of following word
+\LettrineRealHeighttrue
+\renewcommand{\LettrineTextFont}{}
+
+% use all small caps for \textsc
+\let\mixtextsc\textsc
+\renewcommand{\textsc}[1]{\mixtextsc{\addfontfeatures{Letters=UppercaseSmallCaps}{#1}}}
+
+% Render emphasized text as unitalicized red (rubrics)
+\makeatletter
+\DeclareRobustCommand{\em}{%
+  \@nomath\em \if b\expandafter\@car\f@series\@nil \itshape \else \color{gregoriocolor} \fi}
+\makeatother
+
+% Running heads: centred chapter title
+\usepackage{scrlayer-scrpage}
+\automark[chapter]{chapter}
+\lehead{}
+\cehead{\headmark}
+\rehead{}
+\lohead{}
+\cohead{\headmark}
+\rohead{}
+
+% PDF links
+\usepackage[open]{bookmark}
+\usepackage{xurl}
+\urlstyle{same} % don't use monospace font for urls
+
+% Set language
+\usepackage[main=canadian]{babel}
+\input{ushyphex} % standard English exceptions
+
+% music formatting
+\gresetlinecolor{gregoriocolor} % make staff lines red
+\gresetheadercapture{commentary}{grecommentary}{string} % put 'commentary' line above music
+\gresetlyriccentering{syllable} % centre on opening syllable rather than vowel
+\gresetgregoriofont[op]{greciliae} % alternate reverse virga
+\grechangestyle{abovelinestext}{\itshape\footnotesize} % match <alt> text to commentary line for biblical citations
+\gresetglyphstyle{mensural} % alternate custos style
+
+\raggedbottom
+\recalctypearea
+
+\title{The booke of Common praier noted.}
+\author{John Merbecke}
+\date{1550}
+
+\lowertitleback{
+\setkomafont{descriptionlabel}{\addfontfeatures{Letters=SmallCaps,Letters=UppercaseSmallCaps}}
+
+\begin{description}
+\item[Source]
+\textit{The booke of Common praier noted} ([London]: Richard Grafton, 1550), \textsc{\textit{STC}} 16441
+\end{description}
+
+Edited by Andrew Dunning from copies in the Bodleian Library, the \href{https://archive.org/details/bookeofcommonpra00chur_8}{Boston Public Library}, and the \href{https://search.proquest.com/eebo/docview/2240873783}{British Library}. Provided under a \href{https://creativecommons.org/publicdomain/zero/1.0/}{Creative Commons Universal (\textsc{CC0 1.0}) Public Domain Dedication}.
+}
+
+% Also online:
+%
+% 1844: https://catalog.hathitrust.org/Record/008695658
+%
+% 1871: https://catalog.hathitrust.org/Record/100909739
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{In this booke}
+
+is conteyned so much of the Order of 
+Common prayer as is to be song in
+Churches: wherein are vsed only these
+iiii. sortes of notes,
+
+{\gresetinitiallines{0}
+\gresetclef{invisible}
+\gabcsnippet{(iV> : i : I : iv_ :)}
+}
+
+\lettrine{T}{he} first note is a strene note, and is a 
+breue. The second a square note, and is a 
+semy breue. The iii. a pycke
+and is a mynymme. And when there is a
+prycke by the square note, that prycke
+is half as muche as the note
+that goeth before it. The
+iiii. is a close, and is
+only vsed at the end 
+of a verse.
+
+\chapter{Mattins.}
+
+\begin{center}
+  \emph{The Quere wyth the Priest.}
+\end{center}
+
+\gabcsnippet{(c3) OUre(f) fa(f)ther(f) which(f) arte(f) in(f) hea(f)uen,(f) ha(F)lo.(F) etc.(f+)}
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) <c>Priest.</c> {O}(dV>) lorde(d) o(D)pen(D) thou(d) my(d) lippes(dv_) <c>Auns.</c> {And}(d) my(d) mouth(d) shal(d) shew(d) forth(d) thy(d) praise(dv_)}
+}
+
+\greannotation{\emph{Priest.}}
+\gabcsnippet{(c3) O(fV>) God(h) make(h) spede(iV>) to(h) saue(hV>) me.(hv_)
+<c>Auns.</c> {O}(hV>) lorde(h) make(h) hast(h) to(h) helpe(hV>) me.(hv_) Glo(h.)ry(H) be(h) to(h) the(h) fa(h)ther,(h) and(h) to(h) the(h) Sonne,(hV>) and(h) to(h) the(h) ho(h.)ly(H) ghost.(hv_) As(H) it(H) was(h) in(h) the(H) be(H)gin(h)nyng,(h) is(h) now(h) and(h) e(h.)uer(H) shal(h)be,(hV>) world(h) wyth(h) out(h) end(h) A(hV>)men.(hv_) Prayse(h) ye(iV>) the(h) lorde.(gxfgv_) (:)}
+
+\section{Venite exultemus.}
+
+\gabcsnippet{(c3) O(hV>) Come,(h) lett(h) vs(h) syng(h) vn(h)to(h) the(h) lorde,(iV>) lett(h) vs(h) hert(h)ly(h) re(h)ioyce(h) in(h) the(h) strength(h) of(h) oure(h) sal(h)ua(f.)ci(F)on.(ev_) (:) etc.(h+)}
+
+\begin{center}
+  \emph{And so forth, wyth the rest of the Psalmes, as they be appoynted.}
+  
+  \clearpage
+
+  \emph{After the first lession.}
+\end{center}
+
+\section{Te deum laudamus.}
+
+\gabcsnippet{(c4) WE(e) prayse(g) the,(h) o(i) lorde,(hv_) (:) we(e) know(g)lege(g) the(h) to(i) be(hV>) the(g) lorde.(gv_) (:) All(g) the(h) earth(j) doth(i) wor(h)shipp(g) the,(h) the(e) fa(g)ther(g) e(h)uer(i)last(hV>)ing.(gv_) (:) To(g) the(j) al(j) an(j)gels(i) cry(h) a(g)loud,(h) the(e) heauens(g) and(h) all(i) the(h) powers(hV>) ther(g)in.(gv_) (:) To(g) the(j) Che(j.)ru(J)bin,(j) and(i) Se(h)ra(g)phin(h) con(e)tin(G)u(G)al(i)ly(hV>) do(g) crye.(gv_) (:) Ho(gV>)ly,(hV>) ho(hV>)ly,(gV>) ho(hV>)ly,(i) lord(g) god(h) of(i) sa(hV>)ba(g)oth.(gv_) (:) Heauen(g) and(h) earth(j) are(i) full(h) of(h) the(h) ma(i.)ies(H)tye(h) of(g) thy(h) glo(hV>)ry.(gv_) (:) The(g) glo(j.)ri(I)ous(h) com(i)pa(h)nye(h) of(h) the(G) a(G)pos(h)tles,(i) praise(hV>) the.(gv_) (:) The(g) good(h)ly(i) fel(j)ow(i)shyp(h) of(h) the(g) pro(h)phettes,(i) prayse(hV>) the.(gv_) (:) The(g) no(h)ble(i) ar(jV>)my(i) of(g) mar(h)tyrs,(i) prayse(hV>) thee.(gv_) (:) The(g) ho(j)ly(i) Church(h) through(e) out(g) all(h) the(h) world(i) doth(h) know(hV>)lege(g) the.(gv_) (:) The(g) fa(j)ther(i) of(h) an(g) in(h.)fin(H)ite(i) ma(h.)ies(G)tye.(gv_) (:) Thy(g) hon(h)or(i)ab(j)le,(i) true,(h) and(i) one(hV>)lye(g) sonne.(gv_) (:) Al(g)so(h) the(i) ho(j)ly(i) ghost(h) the(i) con(hV>)for(g)ter.(gv_) (:) Thou(e) arte(g) the(h) kyng(h) of(g) glor(h)ye,(i) o(gV>) Christ.(ev_) (:) Thou(e) arte(g) the(h) e(h.)uer(H)last(g)yng(h) sonne(i) of(h) the(i) fa(gV>)ther.(ev_) (:) When(e) thou(g) tok(h)est(h) vp(h)on(h) the(g) to(i) de(h)li(h)uer(g) man,(h) thou(e) didest(g) not(h) ab(g)horre(h) the(i) vir(g)gins(g) wombe.(ev_) (:) When(e) thou(g) haddest(h) o(H)uer(H)come(h) the(g) sharp(i)nes(h) of(g) death,(h) thou(e) didest(g) o(h.)pen(H) the(h) kyng(h)dome(g) of(h) heauen(iV>) to(h) all(h) be(i)le(gV>)uers.(ev_) (:) Thou(e) sittest(g) on(h) the(h) right(h) hand(g) of(h) god,(i) in(h) the(h) glor(h)ye(g) of(h) the(i) fa(gV>)ther.(ev_) (:) We(e) be(g)leue(h) that(h) thou(h) shalt(g) come(h) to(i) be(g) oure(g) Iudge.(ev_) (:) We(e) ther(g)fore(h) pray(hV>) the,(g) helpe(i) thy(h) ser(g)uauntes(h) whome(h) thou(h) hast(h) re(h)dem(h)ed(g) with(h) thy(i) pre(g)ci(G)ous(G) bloud.(ev_) (:) Make(fV>) them(f) to(e) be(f) nom(dV>)bred(c) with(e) thy(f) saints,(g) in(g) glor(g)ye(g) e(h)uer(f)last(gV>)ing.(ev_) (:) O(cV>) lorde(d) saue(f) thy(e) peo(dV>)ple,(c) and(f) blesse(g) thyne(h) he(g.)ri(F)tage.(ev_) (:) Go(f)uerne(e) them(d) and(c) lift(g) theim(g) vp(h) for(f) e(gV>)uer.(ev_) (:) Day(eV>) by(g) day(h) we(g) mag(g.)ni(G)fie(f) thee.(ev_) (:) And(e) we(g) wor(h)shipp(g) thy(h) name(iV>) e(h)uer(g) world(h) wyth(i) out(gV>) end.(ev_) (:) Vouch(e)safe,(g) O(gV>) lord(h) to(h) kepe(h) vs(h) this(g) day(h) with(i) out(gV>) sinne.(ev_) (:) O(eV>) lord(g) haue(h) mer(h)cy(g) vp(h)on(iV>) vs,(h) haue(h) mer(g)cy(h) vp(i)on(gV>) vs.(ev_) (:) O(eV>) lorde,(g) lett(h) thy(h) mer(h)cy(g) ligh(i)ten(i) vp(h)on(g) vs,(h) as(h) our(g) trust(h) is(i) in(gV>) the.(ev_) (:) O(cV>) lord(d) in(f) the(f) haue(e) I(f) trust(dV>)ed,(c) lett(g) me(g) ne(g)uer(f) be(g) con(h)found(fV>)ed.(ev_) (::)}
+
+\clearpage
+
+\begin{center}
+  \emph{After the second lesson one of these that folow.}
+\end{center}
+
+\section{Benedictus dominus.}
+
+\gabcsnippet{(c3) Bles(dV>)sed(f) be(h) the(h) lord(h) god(h) of(h) Is(h)ra(h)ell,(iV>) for(h) he(h) hath(h) vis(H)it(H)ed(h) and(h) re(h)dem(i)ed(i) his(g) peo(hV>)ple,(fv_) (:) And(dV>) hath(f) lift(H)ed(H) vp(h) an(h) horne(h) of(h) sal(h)ua(h)ci(H)on(H) to(h) vs,(iV>) in(h) the(h) house(h) of(h) his(h) ser(i)uaunt(g) da(hV>)uid.(fv_) (:) As(dV>) he(f) spake(h) by(h) the(h) mouth(h) of(h) his(h) ho(h)ly(h) pro(iV>)phetts,(h) which(h) hath(h) bene(h) sence(i) the(g) world(h) be(h)gan.(fv_) (:) That(dV>) we(f) shuld(h) be(h) sa(h)ued(h) from(h) our(h) en(i.)e(H)mies,(h) and(h) from(h) the(h) handes(h) of(h) all(i) that(g) hate(hV>) vs.(fv_) (:) To(dV>) per(f)fourme(h) the(h) mer(h)cy(h) pro(H)mi(H)sed(h) to(h) our(h) fa(iV>)thers,(h) and(h) to(h) re(h)mem(h)bre(h) his(h) ho(i)ly(g) coue(hV>)naunt.(fv_) (:) To(dV>) per(f)fourm(h) the(h) othe(h) which(h) he(h) sware(h) to(h) oure(h) fa(h)ther(h) Ab(h)ra(h)ham,(iV>) that(h) he(i) wold(g) geue(hV>) vs.(fv_) (:) That(dV>) we(f) be(h)yng(H) de(H)li(H)uer(H)ed(h) out(h) of(h) the(h) handes(h) of(h) oure(h) en(i.)e(H)mies,(h) might(h) serue(h) him(i) with(g) out(hV>) feare.(fv_) (:) In(dV>) ho(f.)ly(F)nes(h) and(h) righ(h)te(H)ous(H)nes(h) be(h)fore(h) him,(iV>) all(h) the(h) dayes(i) of(g) oure(hV>) life.(fv_) (:) And(dV>) thou(f) child(h) shalt(h) be(h) cal(h)led(H) the(H) pro(h)phett(h) of(h) the(h) highest,(iV>) for(h) thou(h) shalt(h) go(h) be(h)fore(h) the(h) face(h) of(H) the(H) lorde,(h) to(i) pre(g)pare(h) hys(h) waye.(fv_) (:) To(dV>) geue(f) know(h)ledge(h) of(h) sal(h)ua(h)ci(H)on(H) vn(h)to(h) his(h) peo(iV>)ple(h) for(h) the(h) re(h)mis(I)si(I)on(g) of(h) their(h) sinnes.(fv_) (:) Through(dV>) the(f) ten(h)der(h) mer(h)cie(h) of(h) our(h) god,(iV>) where(h)by(h) the(h) day(h)springe(h) frome(h) an(h) highe(i) hath(g) vis(H)it(H)ed(h) vs.(fv_) (:) To(dV>) geue(f) light(h) to(h) theim(h) that(h) sitt(h) in(h) darke(h)nes,(h) and(h) in(h) the(h) sha(H)dow(H) of(h) death,(iV>) and(h) to(h) guyde(h) our(h) feete(h) in(h) to(i) the(g) way(h) of(h) peace.(fv_) (:) Glo(d.)ry(D) be(f) to(h) the(h) fa(hV>)ther,(h) and(h) to(h) the(h) sonne,(iV>) and(h) to(i) the(g) ho(h.)ly(H) ghost.(fv_) (:) As(d.) it(D) was(f) in(h) the(H) be(H)gyn(h)ning,(h) is(h) now(h) and(h) e(h.)uer(H) shal(h)be,(iV>) world(h) with(h) out(i) end(g) A(hV>)men.(fv_) (::)}
+
+\section{[Benedictus dominus.]}
+
+\gabcsnippet{(c3) Bles(e.)sed(E) be(f) the(e) lorde(h) god(h) of(h) Is(h)ra(h)ell,(iV>) for(h) he(h) hath(h) vis(H)it(H)ed(h) and(h) re(h)dem(i)ed(g) his(h) peo(fV>)ple,(ev_) (:) And(e) hath(f) lift(E)ed(E) vp(h) an(h) horne(h) of(h) sal(h)ua(h.)ci(H)on(g) to(h) vs,(iV>) in(h.) the(H) house(h) of(h) his(h) ser(g)uaunt(h) da(fV>)uid.(ev_) (:) As(e) he(e) spake(f) by(E) the(E) mouth(h) of(h) his(h) ho(g)ly(h) pro(iV>)phetts,(h) which(h) hath(h) bene(h) since(g) the(h) worlde(fV>) be(e)gan.(ev_) (:) That(e) we(e) should(f) be(e) sa(h)ued(h) from(g) our(h) en(i.)e(H)mies,(h) and(h) from(h) the(h) handes(h) of(h) all(g) that(h) hate(fV>) vs.(ev_) (:) To(e) per(e)fourme(f) the(e) mer(h)cy(h) pro(H)mis(H)ed(h) to(g) oure(h) fa(iV>)thers,(h) and(h) to(h) re(h)mem(h)bre(h) his(h) ho(g)ly(h) coue(fV>)naunt.(ev_) (:) To(e) per(e)fourme(f) the(e) othe(h) which(h) he(h) sware(h) to(H) oure(H) fa(h)ther(h) Ab(g)ra(h)ham,(iV>) that(h) he(g) wold(h) geue(fV>) vs.(ev_) (:) That(e) we(e) be(f)yng(E) de(E)li(H)uer(H)ed(h) out(h) of(h) the(h) handes(h) of(g) oure(h) en(i.)e(H)mies,(h) might(h) serue(h) him(g) with(h) out(fV>) feare.(ev_) (:) In(e) ho(f.)ly(F)nes(e) and(e) righ(h)te(H)ous(H)nes(h) be(g)fore(h) him,(iV>) all(h) the(h) dayes(g) of(h) oure(fV>) life.(ev_) (:) And(e) thou(f) Child,(e) shalt(h) be(h) call(h)ed(H) the(H) pro(h)phett(h) of(g) the(h) highest,(iV>) for(h) thou(h) shalt(h) go(h) be(h)fore(h) the(h) face(h) of(H) the(H) lorde,(h) to(g) pre(h)pare(fV>) hys(e) waye.(ev_) (:) To(e) geue(e) know(f)lege(e) of(h) sal(h)ua(h.)ci(H)on(h) vn(h)to(g) his(h) peo(iV>)ple(h) for(h) the(h) re(h)mis(G)si(G)on(h) of(fV>) their(e) sinnes.(ev_) (:) Through(e) the(e) ten(f)der(e) mer(h)cy(h) of(g) our(h) god,(iV>) where(h)by(h) the(h) day(h) spring(h) frome(h) an(g) high(h) hath(h) vis(f.)it(F)ed(e) vs.(ev_) (:) To(e) geue(e) light(f) to(e) theim(h) that(h) sitt(h) in(h) darke(h)nes,(h) and(h) in(g) the(h) sha(i.)dow(I) of(h) death,(hV>) and(h) to(h) guyde(h) our(h) feete(h) in(h) to(g) the(h) way(fV>) of(e) peace.(ev_) (:) Glo(e.)ry(E) be(e) to(f) the(e) fa(hV>)ther,(g) and(h) to(iV>) the(h) Sonne,(hv_) and(h) to(g) the(h) ho(f.)ly(E) ghost.(ev_) (:) As(e.) it(E) was(e) in(f) the(E) be(E)gyn(h)nyng,(h) is(h) now(g) and(h) e(i.)uer(I) shal(h)be,(hv_) world(h) with(h) out(g) end(h) A(fV>)men.(ev_) (::)}
+
+\gabcsnippet{(c2) LOrde(f) haue(f) mer(f)cy(F) vp(F)on(fV>) vs.(fv_) Christ(f) haue(f) mer(f)cy(F) vp(F)on(fV>) vs.(fv_) Lorde(f) haue(f) mer(f)cy(F) vp(F)on(dV>) vs.(ev_)}
+
+\begin{center}
+\emph{The Quere with the Priest.}
+\end{center}
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c2) I(f) be(f)leue(f) in(f) god(f) the(f) fa(f)ther(f) al(f)migh(f)tie,(f) (f+)}
+}
+
+maker of heauen and earth. And in Iesus Christ his onely Sonne our lorde. Which was conceaued by the holy ghost, born of the virgin Mary. Suffred vnder Ponce Pilate, was crucified, dead and buried, he descended into hell. The third day he arose agayn from the dead, He ascended into heauen, and sitteth on the right hand of god the father almightie, From thence shall he come to Iudge the quicke and the dead. I beleue in the holy ghost. The holy Catholike Church. The Communion of saints. The forgeuenes of synnes. The resurrection of the body. And the life euerlastyng.
+
+\lettrine{O}{ure} Father which arte in heauen, halowed be thy name. Thy kyngdome come. Thy wyll be done in earth as it is in heauen. Geue vs this daye oure dayly breade. And forgeue vs oure trespasses, as we forgeue theim that trespasse agaynst vs.
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c2) <c>Priest.</c> {And}(f) leade(f) vs(f) not(f) in(f) to(f) temp(f)ta(fV>)ci(d)on.(dv_) <c>Aunsw.</c> {But}(f) de(f)li(F)uer(F) vs(f) from(f) euil.(f) A(dV>)men.(ev_Z)
+
+<c>Priest.</c>
+{O}(f) lorde(f) shew(f) thy(f) mer(f)cy(F) vp(F)on(d) vs.(ev_)
+<c>Auns.</c>
+{And}(f) graunt(f) vs(f) thy(f) sal(f)ua(f.)ci(D)on.(dv_)
+<c>Pri.</c>
+{O}(f) lorde(f) saue(fV>) the(d) Kyng.(ev_)
+<c>Auns.</c>
+{And}(f) mer(F)ci(F)ful(f)ly(f) heare(f) vs,(f) when(f) we(f) cal(f.) vp(F)on(d) the.(ev_)
+<c>Pri.</c>
+{In}(f)due(f) thy(f) mi(F)ni(F)sters(f) with(f) righ(fV>)te(D)ous(D)ness.(dv_)
+<c>Auns.</c>
+{And}(f) make(f) thy(f) cho(F)sen(F) peo(f)ple(f) joy(fV>)full.(dv_)
+<c>Pri.</c>
+{O}(f) lord(f) saue(f) thy(f) peo(fV>)ple.(dv_)
+<c>Auns.</c>
+{And}(f) blesse(f) thyne(f) in(f)her(f.)it(D)aunce.(dv_)
+<c>Pri.</c>
+{Geue}(f) peace(f) in(f) our(f) tyme,(f) o(dV>) lord.(ev_)
+<c>Auns.</c>
+{Be}(f)cause(f) there(f) is(f) none(f) oth(F)er(F) that(f) fight(F)eth(F) for(f) vs,(f) but(f) one(F)ly(F) thou(f) o(dV>) God.(ev_)
+<c>Pri.</c>
+{O}(f) god,(f) make(f) cleane(f) our(f) hertes(f) with(f) in(fV>) vs.(dv_)
+<c>Auns.</c>
+{And}(f) take(f) not(F) thyne(F) ho(F)ly(F) spi(F)rit(F) from(dV>) vs.(ev_)
+<c>Pri.</c>
+{The}(d) lorde(fV>) be(f) with(f) you.(fv_)
+<c>Auns.</c>
+{And}(d) with(fV>) thy(f) spi(F)rit.(F)
+<c>Pri.</c>
+{Let}(f) vs(f) praye.(fV>)}
+}
+
+\begin{center}
+  \emph{After the Collect for the day these that folow.}
+\end{center}
+
+\gabcsnippet{(c2) O(f) God,(f) which(f) arte(f) auc(f)thor(F) of(F) peace(f) and(f) lo(f)uer(f) of(f) con(f)corde,(f) in(f) know(f)lege(f) (f+)}
+
+of whome standeth oure eternall life, whose seruice is perfect fredome: Defende vs thy humble seruauntes, in all assaultes of oure enemies, that we suerly trustyng in thy defence, maye not feare the power of any aduersaries: Through the might
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c2) of(f) Ie(f)su(f) Christ(f) oure(fV>) Lorde.(fv_) <c>Aunswere.</c> {A}(fV>)men.(fv_)}
+}
+
+\gabcsnippet{(c2) O(f) Lorde(f) oure(f) heauen(f)lye(f) fa(f)ther(F) al(F)migh(f)tie(f) (f+)}
+
+and euerlyuyng God, which hast safely brought vs to the begynnyng of thys daye: defende vs in the same wyth thy myghtye power, and graunt that this day we fall into no synne, neither runne into any kynde of daunger, but that all our doynges may be ordred by thy gouernaunce, to do alwayes that is righteous in thy sight:
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c2) Through(f) Ie(f)sus(f) Christ(f) our(fV>) lorde.(fv_) <c>Auns.</c> {A}(fV>)men.(fv_) (::)}
+}
+
+\begin{center}
+  ¶ Thus endeth Mattyns
+\end{center}
+
+\chapter{Euensong.}
+
+\begin{center}
+  \emph{The Quere with the Priest.}
+\end{center}
+
+\gabcsnippet{(c3) OUre(f) fa(f)ther(f) which(f) arte(f) in(f) heauen,(f) ha(F)low(F)ed.(f) etc.(f+)}
+
+\greannotation{\emph{Priest.}}
+\gabcsnippet{(c3) O(fV>) God(h) make(h) spede(iV>) to(h) saue(h) me.(hv_)}
+
+\greannotation{\emph{Auns.}}
+\gabcsnippet{(c3) O(hV>) lorde(h) make(h) hast(h) to(h) helpe(hV>) me.(hv_) (h+)}
+
+
+\gabcsnippet{(c3) GLo(h.)ry(H) be(h) to(h) the(h) fa(h)ther(h) and(h) to(h) the.(h) etc.(h+Z-)
+As(H) it(H) was(h) in(h) the(H) be(H)gin(h)nyng.(h) etc.(h+) <c>As it is before at Mattins.</c>()}
+
+\section{Psalmes.}
+
+\gabcsnippet{(c3) O(h) Lord,(h) re(h)buke(h) me(h) not(h) in(h) thyne(h) in(h)dig(h)na(i.)ci(H)on:(h) nei(h)ther(h) chast(h)en(h) me(h) in(h) thy(h) dis(h)pleas(fV>)ure.(ev_) (:) etc.()}
+
+\begin{center}
+  \emph{And so forth with the rest of the Psalmes, as they be appoynted.}
+  
+  \emph{After the j. lesson, one of these that folow.}
+\end{center}
+
+\section{Magnificat.}
+
+\gabcsnippet{(cb4) MY(f) soule(g) doth(h) mag(h.)ni(H)fie(h) the(g) lorde.(hv_) And(h) my(h) spi(H)rit(H) hath(h) re(h)ioy(hV>)sed(g) in(f) god(g) my(h) sa(gV>)uiour.(fv_) (:) For(f) he(g) hath(h) re(h)gard(h)ed(h) the(g) low(i.)ly(I)nes(h) of(h) hys(h) hand(gV>)maide,(h) for(h) be(h)hold(h) from(h) hence(h)forth(h) all(h) gen(H)er(H)a(h.)ci(H)ons(g) shall(f) call(g) me(h) bles(gV>)sed.(fv_) (:) For(f) he(g) that(h) is(g) migh(i)tie(h) hath(h) mag(h.)ni(H)fied(g) me,(h) and(f) ho(g)ly(h) is(g.) his(f) name.(fv_) (:) And(f) his(g) mer(h)cy(h) is(h) on(h) theim(h) that(h) feare(gV>) hym,(h) throw(h) out(g) all(f) gen(g)er(h)a(g.)ci(F)ons.(fv_) (:) He(f) hath(g) shew(h.)ed(H) strength(g) with(i) hys(g) arme,(h) he(h) hath(h) ska(H)ter(H)ed(h) the(h) proude(h) in(h) the(h) I(g)ma(F)gi(F)na(G)ci(G)on(h) of(g.) their(F) hertes.(fv_) (:) He(f) hath(g) putt(h) downe(h) the(g) migh(i)tie(h) from(h) their(g) seate,(h) and(h) hath(h) ex(h)alt(h)ed(g) the(f) hum(g)ble(h) and(gV>) meke.(fv_) (:) He(f) hath(g) fil(h.)led(H) the(g) hung(i)ry(h) wyth(h) good(g) thynges,(h) and(h) the(h) ryche(h) he(g) hath(f) sent(g) emp(h)tie(g.) a(F)waye.(fv_) (:) He(f) re(g)mem(h)bryng(h) hys(h) mer(h)cy(h) hath(h) hol(h.)pen(H) his(g) ser(i)uaunt(h) Is(g.)ra(G)ell,(h) as(h) he(h) pro(H)mys(H)ed(h) to(h) oure(h) fa(h)thers(h) A(h.)bra(H)ham(h) and(g) hys(f) seede(g) for(h) e(gV>)uer.(fv_) (:) Glo(f.)ry(F) be(g) to(h) the(g) fa(i.)ther(I) and(h) to(g) the(g) Sonne,(hv_) and(f) to(g) the(h) ho(g.)ly(F) ghost.(fv_)  (:) As(f.) it(F) was(g) in(h) the(H) be(H)gyn(h)nyng,(h) is(h) now(h) and(g) e(i.)uer(I) shal(g)be,(hv_) world(g) with(f) out(g) end(h) A(gV>)men.(fv_) (::)}
+
+\section{Magnificat.}
+
+
+\gabcsnippet{(c3) MY(e) soule(f) doth(e) mag(h.)ni(H)fie(g) the(h) lorde,(iv_) and(h) my(h) spi(H)rit(H) hath(h) re(h)ioy(h)sed(H) in(H) god(g) my(h) sa(fV>)uyour.(ev_) (:) For(e) he(f) hath(E) re(E)gard(h)ed(h) the(h) low(h.)ly(H)nes(h) of(g) hys(h) hand(iV>)mayde,(hv_) for(h) be(h)hold(h) from(h) hence(h)forth(h) all(h) gen(H)er(H)a(h.)ci(H)ons(h) shall(h) call(g) me(h) bles(fV>)sed.(ev_) (:) For(e) he(f) that(E) is(E) migh(h)tie(h) hath(h) mag(g.)ni(G)fied(h) me,(iv_) and(h) ho(g)ly(h) is(f.) hys(E) name.(ev_) (:) And(e) hys(e) mer(f)cy(e) is(h) on(h) theim(g) that(h) feare(iV>) him,(hv_) through(h) out(h) all(g) gen(H)er(H)a(f.)ci(E)ons.(ev_) (:) He(e) hath(f) shewed(e) strength(h) with(iV>) his(h) arme,(hv_) he(h) hath(h) skat(H)ter(H)ed(H) the(H) proude(h) in(h) the(h.) i(H)ma(H)gi(H)na(G)ci(G)on(h) of(f.) their(e) hertes.(ev_) (:) He(e) hath(f) putt(e) downe(h) the(h) migh(g)tie(h) frome(iV>) theyr(h) seate,(hv_) and(h) hath(h) ex(h)alt(H)ed(H) the(h) hum(g)ble(h) and(fV>) meke.(ev_) (:) He(e) hath(e) fil(f)led(E) the(E) hung(h)ry(g) with(h) good(iV>) thynges,(hv_) and(h) the(h) ryche(h) he(h) hath(h) sent(g) emp(h)tie(f.) a(e)way.(ev_) (:) He(e) re(e)mem(f)bryng(e) his(e) mer(h)cy,(h) hath(h) hol(h)pen(H) his(H) ser(h)uaunt(h) Is(g)ra(h)ell,(iv_) as(h) he(h) pro(H)mis(H)ed(h) to(h) oure(h) fa(h)thers,(h) A(h.)bra(H)ham(h) and(h) his(h) seede(g) for(h) e(fV>)uer.(ev_) (:) Glo(e.)ry(E) be(e) to(f) the(e) fa(hV>)ther(g) and(h) to(iV>) the(h) Sonne,(hv_) and(h) to(g) the(h) ho(f.)ly(E) ghost.(ev_)  (:) As(e.) it(E) was(e) in(f) the(E) be(E)gyn(h)nyng,(h) is(h) now(g) and(h) e(i.)uer(I) shal(h)be,(hv_) world(h) with(h) out(g) ende,(h) A(fV>)men.(ev_) (::)}
+
+\section{Nunc dimittis.}
+
+\gabcsnippet{(c3)LOrde,(dV>) now(f) let(H)test(H) thou(h) thy(h) ser(h)uaunt(h) de(h)parte(h) in(h) peace,(iV>) ac(h)cord(i)yng(g) to(h) thy(h) worde,(fv_) (:) For(dV>) myne(f) iyes(h) haue(h) sene,(iv_) thy(i) sal(g)ua(h.)ci(H)on.(fv_) (:) Which(dV>) thou(f) hast(h) pre(h)par(iV>)ed,(hv_) be(h)fore(h) the(h) face(h) of(i) all(g) peo(hV>)ple.(fv_) (:) To(dV>) be(f) a(f) light(h) to(h) light(h)en(H) the(H) gen(iV>)tils,(hv_) and(h) to(h) be(h) the(h) glo(H)ry(H) of(h) thy(h) peo(i)ple(g) Is(h.)ra(H)ell.(fv_) (:) Glo(d.)ry(D) be(f) to(h) the(h) fa(h)ther(h) and(h) to(h) the(h) Sonne,(iv_) and(h) to(i) the(g) ho(h.)ly(H) ghost.(fv_) (:) As(d.) it(D) was(f) in(h) the(H) be(H)gyn(h)nyng(h) is(h) now(h) and(h) e(h.)uer(H) shal(h)be,(iv_) world(h) with(h) out(i) ende.(g) A(hV>)men.(fv_) (::)}
+
+\section{Nunc dimittis.}
+
+\gabcsnippet{(c2)LOrde,(g) now(g) let(G)test(G) thou(g) thy(g) ser(i.)uaunt(I) de(h)parte(g) in(g) peace,(hv_) ac(g)cord(h)yng(g) to(f) thy(g) worde.(fv_) (:) For(g) myne(g) iyes(iV>) haue(g) sene:(hv_) thy(h) sal(g)ua(f.)ci(F)on(fv_) (:) which(g) thou(g) hast(iV>) pre(h)par(g)ed,(hv_) be(g)fore(g) the(g) face(h) of(g) all(f) peo(g)ple.(fv_) (:) To(g) be(G) a(G) light(g) to(g) light(i.)en(I) the(h) gen(g)tils,(hv_) and(g) to(g) be(g) the(g) glo(G)ry(G) of(g) thy(g) peo(h)ple(g) Is(f.)ra(F)ell.(fv_) (:) Glo(g.)ry(G) be(g) to(g) the(g) fa(i.)ther(I) and(h) to(g) the(g) Sonne,(hv_) and(g) to(h) the(g) ho(f.)ly(F) ghost.(fv_) (:) As(g.) it(G) was(g) in(g) the(G) be(G)gin(g)ning(g) is(g) now(iV>) and(h) e(g.)uer(G) shal(g)be,(hv_) world(g) with(g) out(h) end(g) A(fV>)men.(fv_) (::)}
+
+\gabcsnippet{(c2) LOrd,(f) haue(f) mer(f)cy(F) vp(F)on(fV>) vs.(fv_) Christ.(f) etc.(f+)}
+
+\begin{center}
+  \emph{And so forth wyth the suffrages, as is before at Mattins. And after the first Collecte for the daye, these that folow.}
+\end{center}
+
+\gabcsnippet{(c2) O(f) God,(f) frome(f) whome(f) all(f) ho(F)ly(F) de(f)sires,(f) (f+)}
+
+all good counsayles, and all iust workes do procede: Geue vnto thy seruauntes that peace, which the world can not geue, that both our hertes may be set to obey thy commaundementes, and also that by thee, we beyng defended from the feare of our enemies, may passe oure tyme in rest and quietnes: Through the
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c2) mer(F)ites(F) of(f) Ie(f)su(f) Christ(f) our(f) sa(f)uiour.(fv_) (:) <c>Auns.</c> {A}(fV>)men.(fv_) (::)}
+}
+
+\lettrine{L}{Ighten} oure darkenes we beseche the, O lorde, and by thy greate mercy, defende vs frome all perells and daungers of thys night for the loue of thy
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c2) one(f)ly(f) sonne(f) our(f) sa(f)uiour(f) Ie(fV>)su(f) Christ.(fv_) (:) <c>Auns.</c> {A}(f)men.(fv_) (::)}
+}
+
+\chapter[Benedicite.]{For the tyme of lent in the place of Te Deum.}
+
+\section*{Benedicite.}
+
+\gabcsnippet{(cb4) O(hV>) All(h) ye(h) workes(h) of(H) the(H) lorde,(h) speake(h) good(h) of(g.) the(F) lord:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) an(h)gels(h) of(H) the(H) lord,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) heauens,(h) speake(h) good(h) of(g.) the(F) lord:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) wa(h)ters(h) that(h) be(h) a(h)boue(h) the(h) fir(H)ma(H)ment,(h) speake(h) good(h) of(g.) the(F) lord:(fv_) praise(hV>) hym,(g) and(g) sett(f) hym(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) all(h) ye(h) powers(h) of(H) the(H) lorde(h) speake(h) good(h) of(g.) the(F) lord:(fv_) praise(hV>) him(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) Sunne(h) and(h) Moone,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) Sterres(h) of(h) heauen,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) shewers(h) and(h) dew,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) wyndes(h) of(h) god,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) fire(h) and(h) heate,(h) prayse(h) ye(g.) the(F) lorde:(fv_) prayse(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) wyn(h)ter(H) and(H) som(h)mer,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) prayse(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) dewes(h) and(h) frostes,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) prayse(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) froste(h) and(h) colde,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) Ise(h) and(h) snow,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) nightes(h) and(h) dayes,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) prayse(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) light(h) and(h) darke(h)nes,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) lighte(h)ninges(h) and(h) cloudes,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) lett(h) the(h) earth(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) yea,(hV>) lett(h) it(h) praise(hV>) him(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) mount(h)aynes(h) and(h) hylles,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) prayse(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) all(h) ye(h) grene(h) thinges(h) vp(h)on(h) the(h) earth,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) prayse(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) welles,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) Seas(h) and(h) fluddes,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) whales,(h) and(h) all(h) that(h) moue(h) in(H) the(H) wa(h)ters,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) prayse(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) all(h) ye(h) foules(h) of(H) the(H) ayre,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) all(h) ye(h) beastes(h) and(h) cat(H)tel,(H) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) chil(h)dren(H) of(H) men,(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) let(h) Is(H)ra(H)ell(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) priestes(h) of(H) the(H) lorde:(h) speake(h) good(h) of(g.) the(F) lorde:(fv_) praise(hV>) him(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) ser(h)uauntes(h) of(H) the(H) lorde,(h) speake(h) good(h) of(g.) the(F) lord:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) spi(H)rites(H) and(h) soules(h) of(H) the(H) righ(H)teous,(H) speake(h) good(h) of(g.) the(F) lord:(fv_) praise(hV>) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) ye(h) ho(h)ly(h) and(h) hum(h)ble(h) men(h) of(h) hert,(h) speake(h) ye(h) good(h) of(g.) the(F) lorde:(fv_) prayse(hV>) ye(g) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+O(hV>) A(H)na(H)ni(h)as,(h) A(H)sa(H)ri(h)as(h) and(h) Mi(H)sa(H)el,(h) speake(h) ye(h) good(h) of(g.) the(F) lord:(fv_) praise(hV>) ye(g) him,(g) and(g) sett(f) him(d) vp(fV>) for(e) e(d)uer.(dv_) (:)
+Glo(h.)ry(H) be(h) to(H) the(H) fa(h)ther(h) and(h) to(g.) the(F) sonne,(fv_) and(hV>) to(f) the(d) ho(fV>)ly(e) ghost.(dv_) (:)
+As(h.) it(H) was(h) in(h) the(H) be(H)gynn(h)yng(h) is(h) now(h) and(h) e(g.)uer(G) shal(f)be,(fv_) world(gV>) with(f)out(d) end.(f) A(eV>)men.(dv_) (::)}
+
+\chapter{Quicunque vult.}
+
+\gabcsnippet{(c3) Who(i.)so(I)e(i)uer(i) wyll(h) be(i) sa(jV>)ued:(i) be(i)fore(i) all(i) thynges,(i) it(i) is(i) nec(I)es(I)sa(I)ry(I) that(i) he(h) hold(i) the(j) cath(h)o(H)like(H) faith.(fv_) (:) Which(i) fayth,(i) ex(i)cept(i) eue(I)ry(I) one(i) do(i) kepe(i) ho(i.)ly(I) and(i) vn(h)de(i)fi(jV>)led:(i) with(i) out(i) doubt(i) he(i) shall(h) per(I)ish(I) e(J)uer(J)last(h.)ing(H)ly.(fv_) (:) And(i) the(i) cath(i.)o(I)like(i) faith(h) is(i) this:(j) that(i) we(i) wor(I)shipp(I) one(i) god(i) in(i) tri(i.)ni(I)tie(i) and(h) tri(i.)ni(I)tie(i) in(j) v(h.)ni(H)tie.(fv_) (:) Nei(i.)ther(I) con(i)found(i)yng(h) the(i) per(jV>)sones:(i) nor(i.) de(H)uyd(i)yng(i) the(j) sub(hV>)staunce.(fv_) (:) For(i) there(i) is(i) one(i) per(I)sone(I) of(i) the(i) fa(i.)ther,(I) an(i)oth(i.)er(I) of(h) the(i) sonne,(jV>) and(i) an(i)oth(i.)er(H) of(i) the(j) ho(h.)ly(H) ghost.(fv_) (:) But(i) the(i) god(i)hed(i) of(i) the(i) fa(i)ther,(i) of(i) the(i) sonne,(i) and(i) of(i) the(i) ho(i.)ly(I) ghost(i) is(h) all(i) one:(jV>) the(i) glo(i.)ry(I) eq(i)uall(i) the(i) ma(i.)ies(I)tie(h) co(i)e(j)ter(hV>)nall.(fv_) (:) Suche(i) as(i) the(i) fa(i.)ther(I) is(i) suche(i) is(h) the(i) sonne:(jV>) and(i) suche(h) is(i) the(j) ho(h.)ly(H) ghost.(fv_) (:) The(i) fa(i.)ther(I) vn(I)cre(I)ate(i) the(h) sonne(i) vn(j.)cre(I)ate:(i) and(i) the(h) ho(I)ly(I) ghost(j) vn(h.)cre(H)ate.(fv_) (:) The(i) fa(i.)ther(I) in(i)com(I)pre(I)hen(i)si(I)ble,(I) the(i) sonne(h) in(i)com(j.)pre(J)hen(i)si(I)ble:(I) and(i) the(h) ho(i.)ly(I) ghost(i) in(j)com(H)pre(H)hen(h)si(F)ble.(fv_) (:) The(i) fa(i.)ther(I) e(i)ter(i)nall(i) the(i) sonne(h) e(i)ter(jV>)nal:(i) and(i) the(h) ho(i.)ly(I) ghost(i) e(j)ter(hV>)nall.(fv_) (:) And(i) yet(i) they(i) are(i) not(i) three(h) e(i)ter(jV>)nalles:(i) but(h) one(i) e(j)ter(hV>)nall.(fv_) (:) As(i) al(i)so(i) there(i) be(I) not(I) three(i) in(i)com(I)pre(I)hen(i)si(I)bles,(I) nor(i) three(i) vn(h)cre(i)at(jV>)ed:(i) but(i) one(i) vn(I)cre(I)at(i)ed,(i) and(h) one(i) in(j)com(H)pre(H)hen(h)si(F)ble.(fv_) (:) So(i) like(i)wise(i) the(i) fa(i.)ther(I) is(h) al(i)migh(jV>)tie:(i) the(i) sonne(i) al(i)migh(i)tie,(i) and(i) the(h) ho(i.)ly(I) ghost(i) al(j)migh(hV>)tie.(fv_) (:) And(i) yet(i) are(i) they(i) not(i) three(h) al(i)migh(jV>)ties:(i) but(h) one(i) al(j)migh(hV>)tie.(fv_) (:) So(i) the(i) fa(i.)ther(I) is(i) god(i) the(i) sonne(h) is(i) god:(jV>) and(i) the(h) ho(i.)ly(I) ghost(j) is(hV>) god.(fv_) (:) And(i) yet(i) are(i) they(i) not(h) three(i) goddes:(jV>) but(j) one(hV>) god.(fv_) (:) So(i) like(i)wise(i) the(i) fa(i.)ther(I) is(i) lord,(i) the(i) sonne(h) is(i) lord:(jV>) and(i) the(j) ho(h.)ly(H) ghost(h) lord.(fv_) (:) And(i) yet(i) not(h) three(i) lordes:(jV>) but(j) one(hV>) lord.(fv_) (:) For(i) like(i) as(i) we(i) be(i) com(i)pel(i)led(i) by(i) the(i) christ(H)i(H)an(i) ve(j.)ri(J)tie:(i) to(i) a(i)know(i)lege(i) eue(I)ry(I) per(i)son(i) by(i) him(i)self(i) to(h) be(i) god(j) and(hV>) lord.(fv_) (:) So(i) are(i) we(i) for(i)byd(I)den(I) by(i) the(i) cath(i.)o(I)like(h) re(i)li(j.)gi(J)on:(i) to(i) say(i) there(i) be(i) three(h) goddes,(i) or(j) three(hV>) lordes.(fv_) (:) The(i) fa(i.)ther(I) is(i) made(h) of(i) none:(jV>) nei(i.)ther(I) cre(h)at(i)ed(j) nor(h.) be(H)got(F)ten.(fv_) (:) The(i) sonne(i) is(i) of(i) the(i) fa(h.)ther(H) a(i)lone:(jV>) not(i) made(i) nor(i) cre(h)at(i)ed,(j) but(h.) be(H)got(F)ten.(fv_) (:) The(i) ho(i.)ly(I) ghost(i) is(i) of(i) the(i) fa(i.)ther(I) and(i) of(h) the(i) sonne:(jV>) nei(i.)ther(I) made(i) nor(I) cre(I)at(i)ed,(i) nor(i.) be(I)got(H)ten,(H) but(i) pro(j)ced(hV>)yng.(fv_) (:) So(i) there(i) is(i) one(i) fa(i.)ther,(I) not(i) three(i) fa(iV>)thers(i) one(i) sonne,(i) not(h) three(i) sonnes:(jV>) one(i) ho(i.)ly(I) ghost(h) not(i) three(j) ho(h.)ly(H) ghostes.(fv_) (:) And(i) in(i) this(i) tri(I)ni(I)tie(i) none(i) is(i) a(i)fore(i) or(i) af(h)ter(i) oth(jV>)er:(i) none(i) is(i) great(i.)er(I) nor(h) lesse(i) then(j) oth(hV>)er.(fv_) (:) But(i) the(i) whole(h) three(i) per(jV>)sones:(i) be(i) co(I)e(I)ter(i)nall(i) to(h)geth(i.)er(I) and(i) co(j)eq(hV>)uall.(fv_) (:) So(i) that(I) in(I) all(i) thinges(i) as(i) is(i) a(h)fore(i) sayde:(jV>) the(i) v(i.)ni(I)tie(i) in(i) tri(i.)ni(I)tie,(i) and(i) the(i) tri(i.)ni(I)tie(i) in(i) v(i.)ni(I)tie(i) is(h) to(i) be(j) wor(h.)ship(H)ped.(fv_) (:) He(i) ther(i)fore(i) that(i) will(h) be(i) sa(jV>)ued:(i) must(i) thus(i) thinke(h) of(i) the(j) tri(h.)ni(H)tie.(fv_) (:) Fur(I)ther(I)more(i) it(i) is(i) nec(I)es(I)sa(I)ry(I) to(i) e(I)uer(I)last(i)ing(h) sal(i)ua(j.)ci(J)on:(i) that(i) he(i) al(i)so(i) be(i)leue(i) ryght(i)ly(i) in(i) the(i) in(I)car(I)na(i.)ci(I)on(i) of(h) oure(i) lorde(j) Ie(h.)su(H) Christ.(fv_) (:) For(i) the(i) right(i) fayth(i) is(i) that(i) we(i.) be(I)leue(i) and(h) con(i)fesse:(jV>) that(i) our(i) lord(i) Ie(i.)sus(I) Christ(i) the(i) sonne(i) of(h) god,(i) is(j) god(h) and(h) man.(fv_) (:) God(i) of(I) the(I) sub(i)staunce(i) of(I) the(I) fa(i)ther,(i) be(i)got(I)ten(I) be(i)fore(h) the(i) worldes:(jV>) and(i) man(i) of(I) the(I) sub(i)staunce(i) of(H) his(H) moth(i)er,(i) borne(j) in(h) the(h) world.(fv_) (:) Per(i)fect(i) god(i) and(i) per(h)fect(i) man:(jV>) of(I) a(I) rea(I)son(I)ab(I)le(I) soule(i) and(i) hu(i)main(h) flesh(i) sub(j)sist(hV>)ing.(fv_) (:) E(i)quall(i) to(I) his(I) fa(i)ther(i) as(i) touch(i)ing(h) his(i) god(jV>)hed:(i) and(i) in(i)fe(I)ri(I)or(i) to(I) the(I) fa(i)ther,(h) touch(i)ing(i) his(j) man(hV>)hod.(fv_) (:) Who(i) al(i)thoughe(i) he(i) be(i) god(h) and(i) man:(jV>) yet(i) he(i) is(i) not(h) twoo(i) but(j) one(hV>) god.(fv_) (:) One,(iV>) not(i) by(i) con(i)uer(I)si(I)on(i) of(I) the(I) god(i)hed(i) in(h) to(i) fleshe:(jV>) but(i) by(i) tak(i.)yng(I) of(i) the(h) man(i)hod(j) in(H) to(H) god.(fv_) (:) One(i) al(I)to(I)geth(I)er,(I) not(i) by(i) con(i)fu(i.)si(I)on(h) of(i) sub(jV>)staunce:(i) but(i) by(h) v(i.)ni(I)tie(i) of(j) per(hV>)son.(fv_) (:) For(i) as(i) the(i) rea(I)son(I)a(I)ble(I) soule(i) and(i) flesh(i) is(h) one(i) man:(jV>) so(i) god(i) and(h) man(i) is(j) one(hV>) christ.(fv_) (:) Who(i) suf(I)fer(I)ed(i) for(i) our(h) sal(i)ua(j.)ci(J)on:(i) de(i)scend(i)ed(i) in(I) to(I) hell,(i) rose(i.) a(I)gayne(i) the(h) third(i) day(j) from(h.) the(H) dead.(fv_) (:) He(i) as(i)cend(i)ed(i) in(I) to(I) heauen,(i) he(i) sit(I)teth(I) on(I) the(I) right(i) hand(i) of(i) god(h) al(i)migh(jV>)tie:(i) from(i) thence(i) he(I) shall(I) come(i) to(h) Iudge(i) the(i) quicke(j) and(h.) the(H) dead.(fv_) (:) At(i) whose(i) com(I)myng(I) all(i) men(i) shall(i) rise(I) a(I)gayn(i) with(h) their(i) bod(jV>)yes:(i) and(i) shall(i) geue(I) ac(I)compt(h) of(i) their(j) owne(hV>) workes.(fv_) (:) And(i) they(i) that(i) haue(i) done(i) good,(i) shall(i) go(i) in(i) to(i) life(i) e(h)uer(i)last(jV>)ing:(i) and(i) they(i) that(i) haue(i) done(i) euill(i) in(i) to(h) e(i)uer(j)last(h.)ing(H) fire.(fv_) (:) This(i) is(i) the(i) cath(h.)o(H)like(i) fayth:(jV>) which(i) ex(i)cept(I) a(I) man(i) be(i)leue(i) fayth(i.)ful(I)ly(i) he(h) can(I)not(I) be(j) sa(hV>)ued.(fv_) (:) Glo(i.)ry(I) be(i) to(I) the(I) fa(i)ther,(i) and(i) to(h) the(i) sonne:(jV>) and(i) to(i) the(j) ho(h.)ly(H) ghost.(fv_) (:) As(i.) it(I) was(i) in(i) the(I) be(I)gynn(I)yng,(I) is(i) now(i) and(i) e(h.)uer(H) shal(i)be,(j) world(i) with(h)out(i) end,(j) A(hV>)men.(fv_) (::)}
+
+\chapter{At the communion.}
+
+\section{The Introite.}
+
+\gabcsnippet{(c3) BLes(h)sed(h) is(h) that(h) man(h) that(h) hath(h) not(h) walk(h)ed(h) in(h) the(h) coun(h)saile(h) of(h) the(h) vn(h)god(iV>)lye:(hv_) nor(h) stande(h) in(H) the(H) waye(h) of(h) synners,(h) and(h) hath(h) not(h) syt(h) in(H) the(H) seate(h) of(h) the(h) scorne(fV>)full,(ev_) (:) But(h) his(h) de(h)light(h) is(h) etc.(h+)}
+
+\begin{center}
+  \emph{And forth with the Introite, as is Appoynted for the day.}
+\end{center}
+
+\section{Kyrie.}
+
+\gabcsnippet{(cb4) LOrde(fV>) haue(g) mer(hV>)cy(g) vp(h)on(gV>) vs.(fv_) <c>iij.</c> (:)
+Christ(iV>) haue(h) mer(hV>)cy(g) vp(h)on(gV>) vs.(fv_) <c>iij.</c> (:)
+Lord(jV>) haue(i) mer(hV>)cy(g) vp(h)on(gV>) vs.(fv_) <c>iij.</c> (:)}
+
+\section{Gloria in excelsis.}
+
+\gabcsnippet{(c4) GLo(c)ry(d) be(f) to(f) god(e) on(f) highe.(gv_)
+And(e) in(f) earth(e) peace,(d) good(d) will(g) to(g)wardes(g) men,(h)
+we(g) prayse(hV>) the,(h) we(i) blesse(jV>) the,(h)
+we(h) wor(h.)shipp(H) the,(g) we(e) glo(F)ri(F)fie(f) the,(eV>)
+we(c) giue(d) thanks(e) to(e) the,(e) for(g) thy(g) greate(e) glo(fV>)ry,(e)
+O(c) lorde(d) god(e) heauen(f)ly(f) kyng,(e)
+God(g) the(g) fa(hV>)ther(g) al(h)migh(jV>)tie.(g)
+O(e) lorde(f) the(e) one(g)ly(G) be(G)got(f)ten(g) sonne(h) Ie(fV>)su(f) Christ,(eV>)
+O(c) lorde(d) god(f) lambe(e) of(f) god,(g) sonne(g) of(f) the(g) fa(hV>)ther,(g)
+that(e) takest(f) a(f)way(e) the(d) synnes(e) of(c) the(d) world,(eV>)
+haue(f) mer(d)cy(c) vp(d)on(e) vs,(e)
+Thou(g) that(g) takst(h) a(h)way(h) the(g) synnes(g) of(f) the(e) world,(fV>)
+re(d)ceaue(c) our(d) pray(e)er,(e)
+Thou(g) that(g) sittst(h) at(h) the(h) right(g) hand(h) of(h) god(j) the(i) fa(hV>)ther,(g)
+haue(e) mer(f)cy(e) vp(d)on(e) vs:(e)
+For(c) thou(d) one(f)ly(e) art(f) ho(gV>)ly,(f)
+Thou(g) one(h)ly(g) arte(f) the(e) lorde.(eV>)
+Thou(g) one(g)ly,(h) <sp>(</sp>o(h) Christ<sp>)</sp>(jV>)
+with(g) the(e) ho(f.)ly(F) ghost,(e)
+arte(c) most(d) highe(f)
+in(e) the(f) glo(g)ry(f) of(g) god(h) the(g) fa(fV>)ther.(ev_)
+A(dV>)men.(ev_) (::)}
+
+\section{The Crede.}
+
+\gabcsnippet{(cb4) I(d) Be(d)lieue(f) in(g) one(gV>) God.(hv_)
+The(h) fa(h.)ther(H) al(i)migh(j)tie(h)
+ma(g)ker(f) of(g) heauen(h) and(f) earth,(e)
+and(d) of(e) all(f) thinges(g)
+vi(g)si(E)ble,(E) and(f) in(e)ui(d)si(D)ble:(D)
+And(f) in(f) one(g) lorde(h) Ie(i)su(g) Christ,(hV>)
+the(h) one(h)ly(H) be(I)got(j)ten(h) sonne(k) of(k) God,(j)
+be(h)got(h.)ten(H) of(f) his(g) fa(hV>)ther(d) be(e)fore(f) all(d) worldes.(dV>)
+God(h) of(g) God,(h) light(h) of(g) light,(h)
+ve(f.)ry(G) God(h) of(j) ve(i.)ry(I) God,(h)
+be(f)got(G)ten,(G) not(e) made,(f)
+be(d)yng(d) of(e) one(f) sub(g)staunce(d) with(g) the(f) fa(eV>)ther,(d)
+by(h) whome(g) all(f) thynges(jV>) were(i) made,(h)
+who(f) for(g) vs(h) men,(f) and(d) for(f) our(g) sal(e)ua(f.)ci(F)on(d)
+came(h) downe(h) from(g) heauen,(hV>)
+and(d) was(e) in(f)car(g)nate(g) by(g) the(g) ho(h)ly(i) ghost,(j) of(h.) the(H) vir(g)gin(f) Ma(iV>)ry,(h)
+and(f) was(g) made(hV>) man,(f)
+and(d) was(f) cru(g.)ci(G)fied(e) al(g)so(f) for(d) vs,(d) vn(h)der(h) Pon(h.)ci(H)us(g) Pi(h)late(f)
+he(g) suf(h.)fred(H) and(h) was(g) bu(h.)ri(H)ed,(d)
+and(d) the(e) third(f) daye(g) he(G) a(G)rose(j.) a(I)gayne(h)
+ac(g)cord(f)yng(d) to(f) the(e) scrip(d)tures,(d)
+and(h.) as(I)cend(j)ed(h) in(i) to(j) heauen,(kV>)
+and(j) sit(h.)teth(H) at(h) the(g) ryght(h) hand(f) of(g) the(h) fa(fV>)ther,(e)
+whose(f) kyng(g)dome(g) shall(e) haue(f) none(eV>) ende:(d)
+and(h) he(h) shall(h) come(f) a(g)gayne(h) with(f) glo(jV>)rye(h)
+to(h) Iudge(h) bothe(g) the(e) quicke(f) and(e.) the(D) deade.(d)
+And(h) I(h) be(g)leue(h) in(f) the(g) ho(h.)ly(H) ghoste,(h)
+the(g) lorde(h) and(i) ge(j.)uer(J) of(h) life,(h)
+who(d) pro(e)ced(f)eth(g) from(h) the(i) fa(j)ther(h) and(k) the(k) sonne,(j)
+who(h) with(h) the(h) fa(j.)ther(I) and(h) the(g) sonne(h) to(i)geth(h.)er,(H)
+is(f) wor(g.)ship(G)ped(e) and(f) glo(d.)ri(D)fied,(dV>)
+who(f) spake(g) by(h) the(i) pro(gV>)phetes.(f)
+And(h) I(k.) be(K)lieue(j) one(h) Ca(i)tho(G)like(G) and(f) A(g)pos(h)to(H)like(H) Churche.(hv_)
+I(f) ac(f)know(g)lege(f) one(g) bap(h)tisme,(h) for(d) the(f) re(e)mis(F)si(F)on(d) of(e) synnes.(dv_)
+And(f) I(g) loke(h) for(g.) the(G) re(H)sur(I)rec(j.)ti(I)on(h) of(g) the(g) dead:(fv_)
+and(h) the(h) life(j) of(h.) the(G) world(f) to(e) come.(dv_)
+A(cV>)men.(dv_) (::)}
+
+\section{The Offertories.}
+
+\subsection{I}
+
+\grecommentary{Mat. v.}
+\gabcsnippet{(f3) LEt(c) your(c) light(e) so(f) shyne(g) be(f)fore(h) men,(h) that(h) they(h) may(i) se(j) your(h) good(i) workes(h) and(f) glo(h.)ri(H)fie(h) your(h) fath(i)er(g) which(h) is(gV>) in(f) heauen.(fv_) (::)}
+
+\subsection{II}
+
+\grecommentary{Mat. vi.}
+\gabcsnippet{(c4) LAy(d) not(c) vp(d) for(f) your(f) selues(e) trea(g)sure(f) vp(d)on(f) the(e) earth(c) where(f) the(g) rust(h) and(g) mothe(h) doth(ixi) cor(g)rupt,(f) and(d) where(f) thefes(e) breake(g) throw(f) and(d) steale:(d) but(f) lay(g) vp(g) for(f) your(g) selues(h) trea(h)sure(h) in(i) heauen,(j) where(h) nei(h.)ther(H) rust(g) nor(e) mothe(g) doth(h) cor(f)rupt,(f) and(d) where(f) thefes(e) do(f) not(g) breake(e) through(fV>) nor(d) steale.(dv_) (::)}
+
+\subsection{III}
+
+\grecommentary{Mat. vii.}
+\gabcsnippet{(c4) WHat(d)so(d)e(f)uer(F) ye(F) wold(g) that(f) men(g) shuld(g) do(h) vn(F)to(F) you,(f) euen(f) so(h) do(h) you(j) vn(H)to(H) them,(g) for(g) this(g) is(h) the(i) law(jV>) and(g) the(i) pro(hV>)phetes.(gv_) (::)}
+
+\subsection{IIII}
+
+\grecommentary{Mat. vii.}
+\gabcsnippet{(f3) NOt(e) eue(f.)ry(F) one(h) that(f) saieth(f) vn(E)to(E) me,(g) lorde,(f) lorde,(f) shall(e) ent(f)re(F) in(F) to(h) the(h) kyng(i)dom(h) of(i) heauen,(j) but(h) he(h.) that(H) doth(h) the(f) will(i) of(H) my(H) fa(g)ther(f) which(g) is(h) in(gV>) heauen.(fv_) (::)}
+
+\subsection{V}
+
+\grecommentary{Luc. xix.}
+\gabcsnippet{(cb4) ZA(c)che(d) stode(d) forth,(h) and(h) sayed(h) vn(h)to(h) the(g) lorde,(h) be(h)hold(jV>) lorde(h) the(i) halfe(j) of(g) my(g) goodes(h) I(f) geue(g) to(F) the(F) poore,(f) and(f) if(f) I(g) haue(h) done(f) a(g.)ny(G) wrong(f) to(d) a(f.)ny(F) man,(f) I(e) re(f)store(g) foure(eV>) fold.(dv_) (::)}
+
+\subsection{VI}
+
+\grecommentary{i. Cor. ix.}
+\gabcsnippet{(c4) WHo(d) goeth(f) a(f) war(g)fare(f) at(f) a(f.)ny(F) tyme(f) at(F) his(F) owne(g) cost?(f) who(f) plant(g)eth(G) a(G) vyne(h) yarde,(f) and(f) eat(g.)eth(G) not(f) of(d) the(e) fruite(f) ther(d)of?(d) or(c) who(d) feed(f)eth(F) a(F) flocke,(g) and(h) eat(j.)eth(J) not(h) of(f) the(g) milke(h) of(gV>) the(f) flocke.(fv_) (::)}
+
+\subsection{VII}
+
+\grecommentary{i. Cor. ix.}
+\gabcsnippet{(c3) IF(e) we(f) haue(f) sowen(h) vn(H)to(H) yow(h) spi(I)ri(I)tu(H)all(H) thinges,(h) is(h) it(H) a(H) great(h) mat(H)ter(H) if(h) we(h) shall(h) reape(h) your(f) world(h.)ly(H) things?(g) <alt>i. Cor. ix.</alt> Do(e) ye(f) not(f) know,(h) that(h) they(i) which(h) min(H)is(H)ter(H) a(H)bout(h) ho(h.)ly(H) thynges,(g) liue(e) of(g) the(f) sac(h.)ri(H)fice.(h) They(e) which(f) wayte(h) of(H) the(H) al(i)tar(h) are(h) par(h)tak(h)ers(g) (z0c4) of(h) the(g) al(h)tar,(h) euen(g) so(ixi) hath(h) the(g) lord(h) al(f)so(e) or(f)dey(eV>)ned:(d) that(f) they(h) which(h) preache(j) the(g) Gos(g)pell,(f) should(g) lyue(h) of(f) the(g) Gos(fV>)pell.(ev_) (::)}
+
+\subsection{VIII}
+
+\grecommentary{ii. Cor. ix.}
+\gabcsnippet{(c3) HE(e) which(g) soweth(h) li(I)tle,(I) shall(h) reape(g) li(I)tle,(I) and(i) he(i) that(i) soweth(j) plen(h)te(H)ous(H)ly,(h) shall(f) reape(g) plen(e)te(E)ous(E)ly,(e) let(i) eue(H)ry(H) man(i) do(k) ac(k)cord(k)yng(j) as(i) he(i) is(i) dis(i)pos(i)ed(h) in(i) his(j) hert,(i) not(h) grud(i.)gyng(I)ly,(i) or(e) of(g) nec(h)es(I)si(I)tie,(i) for(i) god(i) lo(h)ueth(F) a(F) chere(g)full(f) ge(e)uer.(ev_) (::)}
+
+\subsection{IX}
+
+\grecommentary{Galat. vi.}
+\gabcsnippet{(c4) LEt(d) him(d) that(d) is(e) taught(f) in(g) the(f) worde,(f) min(F)is(F)ter(f) vn(g)to(g) him(h) that(g) teach(ixi)eth(h) in(g) all(f) good(g) thinges,(f) be(h) not(h) de(ixi)cea(j)ued,(g) god(g) is(f) not(g) mock(h)ed,(h) for(d) what(e)so(f)e(g)uer(G) a(G) man(g) sow(g)eth,(g) that(e) shall(f) he(d) reape.(d) <alt>Galat. vi.</alt> While(c) we(d) haue(e) tyme,(f) let(d) vs(f) do(g) good(h) vn(h)to(h) all(jV>) men,(h) and(h) spe(h.)cy(H)al(h)ly(h) vn(f)to(g) theim,(h) which(g) are(h) of(g) the(e) house(f)hold(eV>) of(d) faieth.(dv_) (::)}
+
+\subsection{X}
+
+\grecommentary{i. Timo. vi.}
+\gabcsnippet{(c3) GOd(e.)li(E)nes(f) is(h) greate(h) rich(i)es,(h) if(e.) a(E) man(f) be(h) con(g)tent(h)ed(f) with(f) that(h) he(g) hath.(f) For(c) we(e) brought(f) no(i)thyng(h) in(g) to(h.) the(H) world,(h) nei(g.)ther(G) may(e) we(f) ca(G)ry(G) a(f.)ny(F) thynge(e) out.(ev_) (::)}
+
+\subsection{XI}
+
+\grecommentary{i. Timo. vi.}
+\gabcsnippet{(c4) CHarge(c) theim(d) which(f) are(f) riche(f) in(d) this(e) world(d) that(d) they(g) be(g) re(g.)dy(G) to(g) geue(h) and(f) glad(f) to(f) dis(g)trib(h.)ute,(H) la(h)yng(h) vp(j) in(j) store(j) for(h) theim(g)selfes(g) a(f) good(g) found(h)a(g.)ci(G)on,(f) a(c)gaynst(d) the(d) tyme(f) to(e) come,(d) that(c) they(d) may(f) at(d)tayne(g) e(f)ter(eV>)nall(d) life.(dv_) (::)}
+
+\subsection{XII}
+
+\grecommentary{Hebre. vi.}
+\gabcsnippet{(c4) GOd(d) is(d) not(f) vn(g)righ(h)te(H)ous,(H) that(h) he(h) will(h) for(g)get(h) your(g) workes(e) and(f) la(d)bour(d) that(h) pro(j)cead(k)eth(i) of(h) loue,(j) which(j) loue(j) ye(j) haue(i) shew(h.)ed(H) for(g) his(h) names(gV>) sake,(f) which(f) haue(h) min(J)is(J)tred(j) to(j) the(i) saintes(h) and(g) yet(f) do(f) min(h.)is(H)ter.(g) <alt>Hebre. xiii.</alt> To(d) do(e) good,(f) and(g) to(h) dis(g)trib(G)ute,(G) for(f)get(g) not,(g) for(f) with(h) suche(j) sac(j.)ri(J)fic(H)es(H) god(j) is(g) pleas(hV>)ed.(gv_) (::)}
+
+\subsection{XIII}
+
+\grecommentary{i. Timo. iii.}
+\gabcsnippet{(c3) WHo(c)so(c) hath(e) this(f) worldes(g) good,(f) and(f) sieth(h) his(h) broth(i)er(h) haue(i) nede,(j) and(h) shut(h.)teth(H) vp(h) his(h) com(h)pas(i.)si(I)on(i) from(h) him,(h) how(f) dwel(h)leth(H) the(H) loue(h) of(e) god(f) in(e) him.(e) <alt>Tobi. iiii.</alt> Geue(c) al(e)mose(e) of(f) thy(g) goodes,(f) and(e) turne(f) ne(h)uer(H) thy(H) face(h) from(h) a(i.)ny(I) poore(h) man,(h) and(f) then(h) the(i) face(j) of(j.) the(J) lord(k) shall(i) not(h) be(f) turn(i)ed(G) a(H)way(gV>) from(f) the.(fv_) (::)}
+
+\subsection{XIIII}
+
+\grecommentary{Tobi. iiii.}
+\gabcsnippet{(cb4) BE(c) mer(d.)cy(D)full(d) af(h)ter(h) thy(g) power(h) if(h) thou(h) hast(h) muche(j) geue(j) plen(h)te(H)ous(H)ly,(h) if(f) thou(g) hast(g) li(G)tle,(G) do(f) thy(g) di(h.)li(H)gence(f) glad(g)ly(f) to(f) geue(f) of(d) that(c) li(D)tle,(D) for(f) so(g) gath(h.)er(H)est(h) thou(h) thy(g) selfe(h) a(f) good(g) re(f)ward,(f) in(e) the(f) day(g) of(fV>) nec(e)es(D)si(D)tie.(dv_) (::)}
+
+\subsection{XV}
+
+\grecommentary{Pro. xix.}
+\gabcsnippet{(f3) HE(f) that(f) hath(f) pit(F)ie(F) vp(g)on(h) the(f) poore,(f) lend(h)eth(H) vn(H)to(h) the(i) lorde,(j) and(h) loke(h) what(f) he(g) layeth(h) out,(i) it(g) shal(h)be(f) payed(e) him(f) a(f)gayne.(f) <alt>Psal. xl.</alt> Bles(f.)sed(F) be(e) the(f) man(e) that(c) pro(e)uy(f)deth(e) for(f) the(g) sicke(f) and(e) ne(f)dy,(f) the(h) lord(hV>) shall(h) de(g)li(f.)uer(F) him,(e) in(c) the(e) tyme(f) of(h) trou(gV>)ble.(fv_) (::)}
+
+\section{The preface.}
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) <c>Priest.</c> {The}(H) lorde(h) be(H) with(H) you.(h) (:) <c>Aunswere.</c> {And}(h) with(H) thy(H) spi(H)rit.(H) (:) <c>Priest.</c> {Lift}(H) vp(h) your(H) hertes.(h) (:) <c>Auns.</c> {We}(H) lift(H) theim(H) vp(H) vn(H)to(h) the(H) lorde.(h) (:) <c>Priest.</c> {Let}(H) vs(H) geue(H) thankes(H) to(H) our(H) lorde(h) god.(h) (:) <c>Auns.</c> {It}(H) is(H) mete(H) and(H) right(H) so(h) to(H) do.(H) (:) <c>Priest.</c>(h+)}
+}
+
+\gabcsnippet{(c3) It(H) is(H) ve(H)ry(H) might(H) right(H) and(H) our(H) bound(H)en(H) du(H)tie,(H[cs:etc.]) (h+)}
+
+that we should at all tymes, and in all places geue thankes to the o lorde, holy father almightie euerlastynge god. Therefore with angels and archangels, and with all the holy companye of heauen, we laude and magnifie thy glorious name euer more praysyng the and sayng.
+
+\section{Propre prefaces.}
+
+\subsection{Upon Christmas day.}
+
+\gabcsnippet{(c3) BE(H)cause(H) thou(H) dydest(H) geue(H) Ie(H)sus(H) Christ,(H) thyne(H) (h+)}
+
+onely sonne to be borne as this day for vs, who by the operacion of the holy ghost was made very man, of the substaunce of the virgin Mary his mother, and that without spott of synne, to make vs clene frome all synne. Therefore with angels etc.
+
+\subsection{Upon Easter day.}
+
+\gabcsnippet{(c3) BUt(H) chef(H)ly(H) are(H) we(H) bound(H) to(H) prayse(H) the,(H) for(H) the(H) (h+)}
+
+glorious resurrection of thy sonne Iesus Christ oure lorde, for he is the very paschal lambe which was offered for vs, and hath taken away the synnes of the world, who by his death hath destroyed death, and by his rysyng to life agayn, hath restored to vs euerlastyng life. Therefore with angels etc.
+
+\subsection{Upon the Ascencion day.}
+
+\gabcsnippet{(c3) THrough(H) thy(H) most(H) deare(H) be(H)lo(H)ued(H) sonne(H) Ie(H)sus(H) (h+)}
+
+Christ our lorde, who after his most glorious resurrection manifestly appeared to all his disciples, and in their sight ascended vp into heauen to prepare a place for vs, that where he is, thither might we also ascend and reigne with him in glory. Therefore with angels etc.
+
+\subsection{Upon Whitsonday.}
+
+\gabcsnippet{(c3) THrough(H) Ie(H)sus(H) Christ(H) our lord,(H) ac(H)cord(H)yng(H) (h+)}
+
+to whose most true promes the holy ghost came downe thys day from heauen with a sodayn greate sound as it had bene a mightie wynd, in the likenes of fiery tongues, lightyng vpon the apostles, to teache theim, and to leade theim to all trueth, geuyng theim bothe the gift of dyuerse languages, and also boldnes with feruent zeale constantly to preache the Gospell vnto all nacions, whereby we are brought out of darknes and error, in to the clere light and true knowlege of the, and of thy sonne Iesus Christ. Therfore with angels. etc.
+
+\subsection{Upon the feast of the Trinitie.}
+
+\gabcsnippet{(c3) IT(H) is(H) ve(H)ry(H) meete,(H) right,(H) and(H) our(H) bound(H)en(H) (h+)}
+
+dutie that we should at all tymes, and in all places, geue thankes to the o lorde almightie, euerlastyng god, which arte one god, one lord, not one onely person, but thre persones in one substaunce, for that which we beleue of the glory of the father, thesame we beleue of the sonne, and of the holy ghost, without any difference or inequalitie, whome the angels and arch. etc.
+
+\section{Sanctus.}
+
+\gabcsnippet{(f3) HO(eV>)ly(fv_) Ho(fV>)ly(gv_) Ho(gV>)ly(i) lorde(g) God(h) of(f) hostes.(fv_)
+Heauen(j) and(j) earth(i) are(g) full(i) of(j) thy(h) glo(gV>)ry.(fv_) (:)
+O(j)san(jV>)na(i) in(gV>) the(e) highest.(fv_) (:)}
+
+\gabcsnippet{(f3) BLes(f)sed(F) is(g) he(h) that(h) com(h)meth(H) in(h) the(h) name(i) of(gV>) the(f) lorde:(fv_) (:) Glo(j.)ry(J) be(j) to(i) the(g) o(h) lorde(h) in(hV>) the(e) highest.(fv_) (::)}
+
+\section{The prayer for the whole state of Christes Churche.}
+
+\begin{center}
+\emph{Priest.}
+\end{center}
+
+\gabcsnippet{(c3) AL(F)migh(F)tie(F) and(F) e(F)uer(F)ly(F)uyng(F) god(F) whiche(F) by(F) thy(F) ho(F)ly(F) a(F)pos(F)tle(F) hast(F) taught(F) vs(F) to(F) (f+)}
+
+make prayers and supplicacions, and to geue thankes for all men: we humbly beseche thee moste mercyfully to receaue these our prayers, which we offer vnto thy diuyne maiestye, beseching the to inspire continually, the vniuersal Church, with the spirit of trueth, vnitie and concorde: And graunt that all they that do confesse thy holy name, may agree in the trueth of thy holye worde, and lyue in vnitie and godly loue. Specyallye we beseche the to saue and defend thy seruaunt, \textsc{Edvvard} our kyng, that vnder hym we may be godly and quietly gouerned. And graunt vnto his whole counsayle, and to all that be putt in auctoritie vnder him, that they maye truly and indifferently ministre iustice, to the punishment of wickednes and vice, and to the mainteynaunce of goddes true religion and vertue. Geue grace (O heauenly father) to all byshoppes, pastors and Curates, that they may both by their life and doctrine, sett forthe thy true and liuely worde, and rightly and dewly administer thy holy Sacramentes, and to all thy people geue thy heauenly grace, that with meke hert and due reuerence they may heare and receaue thy holy woorde, truely seruyng the in holynes and righteousnes all the dayes of theyr life: And we most humbly beseche thee of thy goodnes (O lorde) to comfort and succour all theim, which in this transitorie life be in trouble, sorow, nede, sicknes, or any other aduersitie. And especially we commend vnto thy mercyfull goodnes, this congregacion which is here assembled in thy name, to celebrate the commemoracion of the most glorious death of thy sonne: And here we do geue vnto the most highe prayse, and heartie thankes for the wonderfull grace and vertue, declared in all thy saints, from the begynnyng of the world. And chiefly in the glorious and most blessed virgin Mary, mother of thy sonne Iesu Christ our lord and God, and in the holy Patriarches, Prophetes, Apostles and Martirs, whose examples (O lord) and stedfastnes in the faith, and kepyng thy holy commaundementes, graunt vs to folow. We commend vnto thy mercy (O lord) all other thy seruauntes which are departed hence from vs, with the signe of faith, and nowe do rest in the slepe of peace: Graunt vnto theim we beseche the thy mercy, and euerlasting peace, and that at the day of the generall resurrection, we and all they which be of the misticall body of thy sonne, may altogether be set on his right hand, and heare that his most ioyfull voyce: Come vnto me, O ye that be blessed of my father, and possesse the kingdome which is prepared for you, from the begynnyng of the world: Graunt this O father for Iesus Christes sake, oure
+
+{\gresetinitiallines{0}
+\gabcsnippet{(f3) one(F)ly(F) me(F)di(F)a(F)toure(F) and(F) Ad(f)uo(F)cate.(fv_) (:) <c>Auns.</c> {A}(f)men.(fv_) (:)}
+}
+
+\clearpage
+
+\begin{center}
+  \emph{Priest.}
+\end{center}
+
+\lettrine{O}{ God} heauenly father, which of thy tender mercy, diddest geue thyne onely sonne Iesu Christ, to suffre death vpon the Crosse, for oure redemption, who made there (by his one oblacion once offered) a full, perfecte and sufficient sacrifice, oblation, and satisfaction, for the synnes of the whole world, and did institute, and in his holy Gospell commaunde vs, to celebrate a perpetuall memory, of that his precious death, vntill his comming agayne. Heare vs (O mercyfull father) we beseche thee: And with thy holy spirit and worde, vouchesafe to bl✠esse and sanc✠tifie these thy giftes, and creatures of breade and wyne, that they may be vnto vs the body and bloude of thy most dearely beloued sonne Iesus Christ. Who in thesame night that he was betrayed: toke breade, and when he had blessed, and geuen thankes: he brake it, and gaue it to his disciples saiyng: Take, Eate, this my bodye which is geuen for you, do this in remembraunce of me. Likewise after supper he toke the Cupp, and when he had geuen thankes, he gaue it to theim saiyng: drynke ye all of this, for this is my bloude of the new Testament, which is shed for you and for many, for remission of synnes, do this as oft as you shall drynke it in remembraunce of me.
+
+\lettrine{W}{herefore} o lord and heauenly father, accordyng to the institucion of thy dearely beloued sonne, our sauiour Iesu Christ, we thy humble seruauntes do celebrate, and make here before thy diuyne maiestie, with these thy holy giftes, the memoriall which thy sonne hath willed vs to make, hauyng in remembraunce his blessed passion, mightie resurrection and glorious ascencion, renderyng vnto thee most hartie thankes, for the innumerable benefites procured vnto vs by thesame, entierly desyryng thy fatherly goodnes, mercifully to accepte this our sacrifice of praise and thankes geuyng: most humbly beseching the to graunt that by the merites and death of thy sonne Iesus Christ, and through faith in his bloud, we and all thy whole Churche, maye obteigne remission of our synnes, and all other benefites of his passion. And here we offer and present vnto thee (O lord) oure selfe, oure soules, and bodies, to be a reasonable, holy and lyuely sacrifice vnto the, humbly besechyng the, that whosoeuer shalbe partakes of this holy Communion, may worthely receaue the most precious bloud of thy sonne Iesus Christ, and be fulfilled with thy grace, and heauenly benediction, and made one body with thy sonne Iesu Christ, that he may dwell in theim and they in him. And although we be vnworthy (through our manifold synnes) to offre vnto the any sacrifice: yet we beseche thee to accepte this oure bounden duetie and seruice, and commaunde these our prayers and supplicacions, by the ministery of thy holy angels, to be brought vp into thy holy Tabernacle before the sight of thy diuyne maiestie: not waiyng our merites, but perdonyng our offences, Through Christ oure lorde, by whome and with whome, in the vnitie of the holy ghost, all honor and glory, be vnto the O father almightie,
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) world(F) with(F)out(f) end.(fv_) <c>Aunswe.</c> {A}(f)men(fv_)
+<c>Priest.</c> {Let}(F) vs(F) praye.(fV>) () As(F) our(F) sa(F)uiour(F) Christ(f) hath(F) com(F)maund(F)ed(F) and(F) taught(F) vs,(F) we(F) are(F) bold(E) to(F) say.(g)}}
+
+\gabcsnippet{(c3) OUr(G) fa(G)ther(G) which(G) arte(G) in(G) heauen,(h)
+ha(G)low(G)ed(F) be(G) thy(f) name.(e)
+Thy(F) kyng(E)dome(F) come.(g)
+Thy(G) wyll(H) be(F) done(G)
+in(f) earth,(e) as(F) it(F) is(E) in(f) heauen.(g)
+Giue(G) vs(F) this(G) day(h) our(G) day(g)lye(F) breade.(f)
+And(F) for(F)geue(F) vs(E) our(F) tres(g)pac(F)es,(F)
+as(F) we(F) for(F)geue(F) theim(E) that(F) tres(g)pace(F) a(E)gaynst(F) vs.(f)
+And(c) leade(e) vs(F) not(f) in(F) to(g) temp(F)ta(f)ci(E)on.(ev_)
+<c>Auns.</c> {But}(e) de(F)li(f)uer(F) vs(E) from(F) euil(f) A(e)men.(ev_)
+<c>Priest.</c> {The}(E) peace(f) of(G) the(G) lord(h) be(F) al(G)waye(f) with(E) you.(ev_)
+<c>Auns.</c> {And}(E) with(f) thy(F) spi(F)rit.(fv_) (:)}
+
+\section{Agnus dei.}
+
+\gabcsnippet{(c4) O(dV>) Lambe(d) of(e) god(f)
+that(d) takest(g) a(f)way(f) the(g) synnes(h) of(g.) the(G) world,(f)
+Haue(g) mer(h)cy(F) vp(F)on(eV>) vs.(dv_) (:)
+O(dV>) lambe(f) of(g) god(h)
+that(h) takest(j) a(h)waye(h) the(g) synnes(h) of(g.) the(G) world,(f)
+Haue(g) mer(h)cy(F) vp(F)on(eV>) vs.(dv_) (:)
+O(dV>) lambe(d) of(e) god(f)
+that(d) takest(g) a(f)waye(f) the(g) synnes(h) of(g.) the(G) world,(f)
+Graunt(d) vs(gV>) thy(eV>) peace.(dv_) (::)}
+
+\section{The post Communions.}
+
+\subsection{I}
+
+\grecommentary{Mat. xvi.}
+\gabcsnippet{(c4) IF(h) a(h.)ny(H) man(g) will(h) fo(g.)low(G) me,(f) let(g) him(h) for(g)sake(e) him(f) selfe,(d) and(c) take(d) vp(f) his(f) crosse(e) and(f) fo(g.)low(G) me.(g) <alt>Mar. xiij.</alt> Who(f)so(g)e(h.)uer(G) shall(f) en(e)dure(f) vn(d)to(f.) the(F) end,(f) he(f) shal(e)be(g) sa(fV>)ued.(ev_) (:)}
+
+\subsection{II}
+
+\grecommentary{Luke. j.}
+\gabcsnippet{(c4) PRay(h.)sed(H) bee(h) the(h) lord(h) god(h) of(f) Is(g.)ra(G)ell(g) for(g) he(g) hath(g) vis(g.)it(G)ed(g) and(g) re(f)dem(g)ed(G) his(G) peo(h)ple:(f) There(f)fore(f) let(f) vs(g) serue(h) him(h) all(j.) the(J) dayes(j) of(h) our(h) life(g) in(f) ho(g.)ly(G)nes(f) and(g) righ(h)te(H)ous(H)nes(h) ac(g)cept(h)ed(F) be(F)fore(eV>) hym.(dv_) (:)}
+
+\subsection{III}
+
+\grecommentary{Luke. xij.}
+\gabcsnippet{(f3) HAp(h.)py(H) are(f) those(g) ser(h)uauntes(h) whome(g) the(h) lorde(i) when(h) he(h) com(H)meth(H) shall(e) find(f) wak(f)yng.(f) <alt>Luke. xij.</alt> Be(h) ye(i) rea(J)dy,(J) for(j) the(j) sonne(j) of(j) man(j) will(h) come(i) at(I) an(I) houre(i) when(h) ye(i) thinke(gV>) not.(fv_) (:)}
+
+\subsection{IIII}
+
+\grecommentary{Luke. xii.}
+\gabcsnippet{(c2) THe(d) ser(f)uaunt(f) that(f) knoweth(g) his(f) mast(g)ers(g) will,(h) and(h) hath(j) not(h) pre(i)par(j)ed(g) him(f) selfe,(g) ney(g.)ther(G) hath(g) doen(g) ac(f)cord(g)yng(h) to(f) his(g) will,(f) shal(c)be(d) beat(f.)en(F) with(h) ma(g.)ny(F) stripes.(fv_) (:)}
+
+\subsection{V}
+
+\grecommentary{Iohn. iiii}
+\gabcsnippet{(cb4) THe(f) houre(g) com(h.)meth(H) and(h) now(j) it(h) is,(h) when(h) true(g) wor(h.)ship(H)pers(h) shall(f) wor(g.)shipp(G) the(f) fa(f)ther(f) in(c) spi(F)rit(F) and(gV>) trueth.(fv_) (:)}
+
+\subsection{VI}
+
+\grecommentary{Iohn. v}
+\gabcsnippet{(cb4) BE(d)hold(h) thou(g) arte(h) made(i) whole,(h) synne(j) no(k) more,(j) leaste(h) a(I)ny(I) worse(j) thinge(h) hap(F)pen(F) vn(e.)to(D) thee.(dv_) (:)}
+
+\subsection{VII}
+
+\grecommentary{Iohn. viii.}
+\gabcsnippet{(c3) IF(e) ye(i) shall(i) con(i)tin(I)ue(I) in(i) my(h) worde,(i) then(i) are(h) ye(h) my(e) ve(F)ry(F) dis(e)ci(E)ples,(E) and(e) ye(i) shall(h) know(i) the(j) trueth,(i) and(h) the(i) trueth(k) shall(j) make(k) yow(i) free.(i) <alt>Iohn. xii.</alt> While(i) ye(h) haue(i) light,(j) be(i)leue(j) on(i) the(h) light,(i) that(h) ye(h) may(f) be(h) the(e) chil(F)dren(F) of(e) light.(ev_) (:)}
+
+\subsection{VIII}
+
+\grecommentary{Iohn. xiiii.}
+\gabcsnippet{(c4) HE(g) that(g) hath(g) my(e) com(g)maun(h.)de(H)mentes(g) and(h) kep(j.)eth(J) theim,(j) the(g)same(h) is(g) he(g) that(f) lo(g.)ueth(G) me.(g) <alt>Iohn. xiiij.</alt> If(d) a(e.)ny(E) man(g) loue(hV>) me,(g) he(g) will(g) kepe(h) my(h) word,(i) and(g) my(h) fa(i)ther(G) will(G) loue(hV>) hym,(g) and(j) we(j) wyll(h) come(j) vn(g)to(g) him,(h) and(i) dwell(hV>) with(g) him.(gv_) (:)}
+
+\subsection{IX}
+
+\grecommentary{Iohn. xv.}
+\gabcsnippet{(cb4) IF(d) ye(f) shall(f) byde(f) in(g) me,(h) and(f) my(g) worde(h) shall(g) a(f)bide(g) in(f) you,(f) ye(d) shall(d) aske(f) what(f.) ye(F) will,(g) and(f) it(f) shall(f) be(c) done(d) to(c) you.(c) <alt>Iohn xv.</alt> Here(f) in(f) is(f) my(f) fa(g)ther(f) glo(g.)ri(G)fied,(f) that(f) ye(f) beare(f) muche(g) fruite,(h) and(g) be(g)come(i) my(g) dis(h)ci(i)ples.(f) <alt>Iohn. xv.</alt> This(h) is(g) my(h) com(i)maunde(j)ment,(g) that(f) you(f) loue(f.) to(E)geth(d)er(c) as(f) I(g) haue(h) lo(g.)ued(F) you.(fv_) (:)}
+
+\subsection{X}
+
+\grecommentary{Rom. viii.}
+\gabcsnippet{(c2) IF(g) God(g) be(e) on(g) our(h) syde,(g) who(g) can(h) be(g) a(f)gaynst(g) vs?(g) which(h) did(j) not(g) spare(h) his(g) owne(f) sonne,(i) but(f) gaue(h) him(g) for(f.) vs(E) all.(ev_) (:)}
+
+\subsection{XI}
+
+\grecommentary{Rom. viii.}
+\gabcsnippet{(c4) WHo(d) shall(d) lay(e) a(f.)ny(F) thinge(f) to(f) the(f) Charge(g) of(f) Godes(g) Cho(h.)sen?(H) it(h) is(h) god(j) that(g) ius(h.)ti(H)fieth,(h) who(h) is(g) he(h) that(f) can(eV>) con(d)demne.(dv_) (:)}
+
+\subsection{XII}
+
+\grecommentary{Roma. xiii.}
+\gabcsnippet{(cb4) THe(c) night(d) is(d) pas(h.)sed(H) and(g) the(h) day(j) is(h) at(g) hand,(h) let(h) vs(f) there(g)fore(d) cast(f.) a(F)way(g) the(h) dedes(i) of(g) dark(h)nes,(g) and(e) put(g) on(h) the(f) ar(e.)mour(E) of(d) light.(dv_) (:)}
+
+\subsection{XIII}
+
+\grecommentary{i. Cor. i.}
+\gabcsnippet{(c4) CHrist(g) Ie(jV>)sus(h) is(g) made(h) of(g) god,(g) vn(e)to(g) vs(h) wise(g)dome,(g) and(f) righ(g)te(G)ous(G)nes,(g) and(h) sanc(j)ti(J)fi(J)yng,(J) and(i) re(h)demp(j.)ci(J)on,(j) that(j) <sp>(</sp>ac(g)cord(h)yng(g) as(d) it(e) is(f) writ(g.)ten<sp>)</sp>(G) he(g) which(f) re(g)ioy(h)ceth(g) shuld(g) re(h)ioyce(j) in(hV>) the(g) lord.(gv_) (:)}
+
+\subsection{XIIII}
+
+\grecommentary{i. Cor. iii.}
+\gabcsnippet{(c3) KNow(e) ye(e) not(f) that(e) ye(e) are(f) the(g) tem(h.)ple(H) of(h) god,(h) and(h) that(g) the(h) spi(I)rit(I) of(h) god(i) dwel(h.)leth(H) in(h) you?(g) if(f) a(i.)ny(I) man(h) de(i)file(j) the(h) tem(i.)ple(I) of(h) god,(h) him(h) shall(e) god(f) de(e)stroye.(ev_) (:)}
+
+\subsection{XV}
+
+\grecommentary{i. Cor. vi.}
+\gabcsnippet{(c4) YE(g) are(g) dear(f)ly(e) bought,(f) there(d)fore(d) glo(g.)ri(G)fie(g) god(h) in(g) your(f) bod(g)ies,(g) and(g) in(i) your(j) spi(K)rites,(K) for(j) they(j) be(i)long(hV>) to(g) god.(gv_) (:)}
+
+\subsection{XVI}
+
+\grecommentary{Ephe. v.}
+\gabcsnippet{(c4) BE(d) you(d) fol(f.)ow(F)ers(e) of(f) god(g) as(g) deare(g) Chil(g)dren,(g) and(g) walke(f) in(g) loue,(h) euen(h) as(h) Christ(j) lo(h.)ued(H) vs,(g) and(g) gaue(h) him(g) self(h) for(ixi) vs(h) an(f) of(g.)fer(G)yng(f) and(d) a(d) sac(f.)ri(F)fice(f) of(f) a(f) sweete(g) sa(e.)uour(E) to(d) God.(dv_) (:)}
+
+\begin{center}
+  \emph{Priest.}
+\end{center}
+
+\gabcsnippet{(c3) THe(f) lorde(h) be(H) with(H) you.(h) <c>Auns.</c> {And}(f) with(h) thy(H) spi(H)rit.(H) <c>Priest.</c> {Let}(H) vs(H) pray.(h) (h+)}
+
+
+\gabcsnippet{(c3) Al(H)migh(H)tie(H) and(H) e(H)uer(H)ly(H)uyng(H) God,(h) we(H) most(H) herte(H)ly(H) (h+)}
+
+thanke thee, for that thou hast vouchsafed to feede vs in these holy misteries, with the spirituall foode of the moste precious body and bloude of thy sonne, oure sauyour Iesus Christ, and haste assured vs (duely receiuyng the same) of thy fauour and goodnes toward vs, and that we be very membres, incorparate in thy misticall body, which is the blessed companye of all faithfull people: And heires through hope of thy euerlastyng kyngdome by the merites of the most precyous death and passion of thy deare sonne. We therefore most humbly beseche thee, O heauenly father, so to assist vs with thy grace, that we may contynue in that holy felowshipp, and do all suche good workes, as thou hast prepared for vs to walke in: Through Iesus Christ oure lord, to whome with the, and the holy
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) ghost,(H) be(H) all(H) hon(H)or(H) and(h) glo(H)ry.(hv_) (:) <c>Auns.</c> {A}(h)men.(hv_) (:)}
+}
+
+\begin{center}
+The peace of god. etc.
+
+\large
+Finis.
+\par
+\end{center}
+
+\chapter{At the buriall of the dead.}
+\markboth{At the buriall}{of the dead.}
+
+\begin{center}
+  \emph{Respons.}\nopagebreak
+\end{center}
+
+\gabcsnippet{(c3) I(e) Am(e) the(f) re(h)sur(h)rec(h.)ti(H)on(h) and(g) the(h) life(i) saith(h) the(g) lorde,(f) he(e) that(e) be(f)le(h)ueth(e) in(f) me,(e) Yea,(d) though(f) he(h) were(h) dead,(g) yet(h) shall(fV>) he(e) liue.(ev_) (:) <c>Vers.</c> {And}(e) who(h)so(h)e(g)uer(h) ly(i)ueth(h) and(h) be(h)le(g)ueth(h) in(f) me,(e) shall(e) not(f) dye(g) for(f) e(fV>)uer.(ev_) (:) I(e) am(e) the.(f) etc.(h+)}
+
+\clearpage
+
+\begin{center}
+  \emph{Respons.}\nopagebreak
+\end{center}
+
+\gabcsnippet{(c3) I(e) Know(e) that(e) my(f) re(e)dem(e)er(d) ly(e)ueth,(e) (z0c4) and(g) that(g) I(g) shall(h) rise(j) out(i) of(g) the(h) earth(g) in(d) the(d) last(e) day,(f) and(e) shal(d)be(c) Co(d.)uer(D)ed(c) a(g)gayn(h) with(g) my(f) skynne(g) and(g) shall(g) se(h) god(j) in(hV>) my(g) fleshe:(g) Yea,(g) and(g) I(j) my(j) selfe(j) shall(i) be(j)hold(k) him,(j) not(j) with(i) o(h.)ther(H) but(g) with(h) these(i) same(hV>) iyes.(gv_) (:)}
+
+\begin{center}
+  \emph{Respons.}\nopagebreak
+\end{center}
+
+\gabcsnippet{(c3) WE(e) brought(e) no(f)thyng(d) in(e) to(f) this(e) world,(e) nei(e)ther(f) may(h) we(h) ca(H)ry(H) a(h.)ny(H) thing(e) out(f) of(fV>) this(e) world.(ev_) (:) <c>Vers.</c> {The}(e) lorde(h) ge(h.)ueth,(H) and(g) the(h) lord(i) tak(h.)eth(H) a(g)way.(f) Euen(g) as(h) it(f) pleas(g)eth(e) the(f) lorde,(g) so(f) com(e.)meth(E) thinges(e) to(d) passe,(e) bles(e.)sed(E) be(f) the(g) name(h) of(fV>) the(e) lord.(ev_) (:) We(e) brought(e) noth(f)ing.(d) etc.(e+)}
+
+\begin{center}
+  \emph{While the Corps is made ready to be layed into the earth, the Clerkes shall syng.}
+\end{center}
+
+\gabcsnippet{(f3) MAn(f) that(g) is(h) borne(i) of(i.) a(I) wo(i)man(i) hath(h) but(i.) a(I) short(j) tyme(i) to(h) liue,(h) and(f) is(g) full(f) of(e) mis(f.)e(F)rie:(f) He(c) com(E)meth(E) vp(f) and(h) is(g) cutt(f) downe(e) like(f) a(g) floure,(f) he(f) flieth(i) as(I) it(I) were(h) a(i) sha(j)dow,(i) and(h) ne(i.)uer(I) con(g)ty(h.)nu(H)eth(f) in(g) one(f) state.(fv_) (:)}
+
+\begin{center}
+  \emph{Respons.}\nopagebreak
+\end{center}
+
+\gabcsnippet{(c4) IN(d) the(c) middest(d) of(d) life(f) we(d) be(d) in(c) death,(d) of(d) whome(d) may(e) we(f) seke(g) for(g) suc(g.)cor(G) but(f) of(d) the,(e) O(d) lorde,(f) which(e) for(f) our(d) synnes(d) iust(e)ly(d) art(c) mo(d)ued:(d) yet(d) O(d) lorde(g) God(g) most(g) ho(f)ly,(e) O(e) lord(g) most(h) migh(ixi)tie,(g) O(f) ho(f.)ly(F) and(d) most(e) mer(f.)cy(F)full(e) sa(d)uiour.(d) De(hr3)ly(h.)uer(H) vs(g) not(h) in(h) to(j) the(i) bit(h.)ter(H) paynes(g) of(f) e(e)ter(g)nall(g) death.(h) Thou(h) know(h.)est(H) lord(h) the(g) se(f.)cretes(F) of(e) our(f) hertes,(g) shut(c) not(d) vp(f) thy(f) mer(e.)cy(E)full(f) iyes(g) to(e) oure(f) pray(eV>)ers.(dv_) (:) <c>Vers.</c> {But}(f) spare(f) vs(e) lorde(fV>) most(d) ho(e)ly,(d) O(d) god(e) most(f) migh(g)tie,(f) O(g) ho(h)ly(g) and(e) mer(f.)cy(F)full(e) sa(d)uiour,(d) Thou(h) most(h) wor(h.)thy(H) Iudge(g) e(f)ter(h)nall,(h) suf(h.)fre(H) vs(g) not(f) at(e) our(g) last(g) houre(h) for(g) a(f.)ny(F) peynes(e) of(f) death,(g) to(f) fall(eV>) from(d) the.(dv_) (:) De(hr3)ly(h.)uer(H) vs(g) not.(h) etc.(h+)}
+
+\gabcsnippet{(c3) I(e) Heard(g) a(h) voyce(i) from(i) heauen(j) sai(i)yng(i) vn(i)to(h) me,(i) write,(i) bles(k)sed(j) are(i) the(h) dead(i) which(e) dye(e) in(g) the(h) lord:(i) Euen(e) so(f) saieth(f) the(e) spi(F)rit,(F) that(d) they(f) rest(e) from(f) their(g) la(fV>)bours.(ev_) (:)}
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) <c>Priest.</c> {Let}(h) vs(h) praye.(hv_) We(h) com(h)mend(h) in(h) to(h) (h+)}
+}
+
+thy handes of mercy (most mercyfull father) the soule of this oure brother departed. N. and his body we commit to the earth, beseching thyne infinite goodnes, to geue vs grace to liue in thy feare and loue, and to dye in thy fauoure: that when the Iudgement shall come which thou hast committed to thy welbeloued sonne, both this our brother and we may be founde acceptable in thy syght, and receaue that blessing, which thy welbeloued sonne shall then pronounce to all that loue and feare the, saiyng: Come ye blessed Children of my father: receaue the kyngdome prepared for you before the begynnyng of the worlde: Graunt this, mercyfull father for the honour of Iesu Christe our onely sauiour,
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) me(H)di(H)at(H)or(H) and(H) ad(h)uo(D)cate.(dv_) (:) <c>Auns.</c> {A}(h)men.(hv_) (:) Al(H)migh(H)tie(H) (h+)}
+}
+
+God, we geue thee hertye thankes for this thy seruaunt, whome thou hast deliuered from the miseries of this wretched world, from the body of death and all temptacion, and as we trust, hast brought his soule which he committed in to thy holy handes, in to sure consolacion and rest: Graunte we beseche the, that at the day of Iudgement his soule and all the soules of thy electe, departed out of this life, may with vs and we with theim, fully receaue thy promises and be made perfecte all together through the glorious resurrection of thy sonne
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) Ie(h)sus(h) Christ(h) oure(h) lord.(hv_) (:) <c>Aunswe.</c> {A}(h)men.(hv_) (:)}
+}
+
+\section{The Psalmes.}
+
+\gabcsnippet{(c3) I(H) Am(H) well(H) pleas(i)ed:(hv_) that(H) the(H) lord(H) hath(H) heard(H) the(H) voyce(H) of(H) my(H) pray(f)er.(ev_) (:)
+That(H) he(H) hath(H) en(H)cli(H)ned(H) his(H) eare(H) vn(H)to(H) me:(iv_) there.(H) etc.(h+)}
+
+\begin{center}
+  \emph{And so forth the rest, as they be appoynted and stande in ordre}
+\end{center}
+
+\section{After the Lesson.}
+
+\gabcsnippet{(c4) LOrde(G) haue(G) mer(G)cy(G) vp(g)on(gV>) vs.(gv_) Christ(G) haue(G) mer(G)cy(G) vp(g)on(gV>) vs.(gv_) Lorde(g) haue(G) mer(g.)cy(G) vp(f)on(eV>) vs.(ev_) (:)}
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) <c>Priest.</c> {Our}(H) fa(H)ther(H) which(H) arte(H) in(H) heauen.(H) etc.() (Z)
+And(H) leade(H) vs(H) not(H) in(H) to(H) temp(H)ta(h)ci(F)on.(fv_)
+<c>Aunswe.</c> {But}(H) de(H)li(H)uer(H) vs(H) from(H) e(H)uil(H) A(f)men.(gv_)
+<c>Priest.</c> {Ent}(H)re(H) not(H) <sp>(</sp>O(H) lord<sp>)</sp>(H) in(H) to(H) Iudge(H)ment(H) with(H) thy(H) ser(h)uaunt.(f)
+<c>Aunswe.</c> {For}(H) in(H) thy(H) sight(H) no(H) ly(H)uyng(H) cre(H)at(H)ure(H) shal(H)be(H) ius(h)ti(F)fied.(fv_)
+<c>Priest.</c> {From}(H) the(H) gates(H) of(f) hell.(gv_)
+<c>Aunswer.</c> {De}(H)li(H)uer(H) their(H) soules(H) o(f) lord.(gv_) (z0c2) <c>Priest.</c> {I}(F) be(F)leue(F) to(F) se(F) the(F) good(F)nes(F) of(F) the(d) lord.(ev_)
+<c>Aunswer.</c> {In}(F) the(F) land(F) of(F) the(F) ly(f)uyng.(dv_)
+<c>Priest.</c> {O}(f) lorde(F) gra(F)ci(F)ous(F)ly(F) heare(F) my(F) pray(f)er.(dv_)
+<c>Aunswer.</c> {And}(F) let(F) my(F) crye(F) come(F) vn(F)to(d) thee.(ev_) (:)
+<c>Priest.</c> {Let}(F) vs(F) pray.(fv_)}
+}
+
+\gabcsnippet{(c2) O(F) Lorde,(F) (f+)}
+
+with whome do lyue the spirites of theim that be dead: and in whome the soules of theim that be elected, after they be deliuered from the burthen of the fleshe, be in ioye and felicitie: Graunt vnto vs thy seruaunt that the synnes which he committed in this world be not imputed vnto him, but that he eskaping the gates of hell and peynes of eternall darkenes: may euer dwell in the region of light, with Abraham Isaac and Iacob, in the place where is no wepyng, sorow, nor heauynes: And when that dreadefull day of the generall resurrection shall come, make him to rise also with the Iust and righteous, and receaue this body agayn to glory, then made pure and incorruptible, set him on the right hand of thy sonne Iesus Christ amonge thy holy and electe, that then he may heare with theim these most sweete and confortable wordes: Come to me ye blessed of my father, possesse the kyngdome which hath bene prepared for you from the begynnyng of the world: Graunt this we beseche the O mercyfull father: through Iesus Christ oure mediatour
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) and(H) re(H)dem(h)er.(hv_) <c>Aunswer.</c> {A}(h)men.(hv_) (:)}
+}
+
+\chapter{At the Communion when there is a buriall.}
+\markboth{At the Communion}{when there is a buriall.}
+
+\section{The Introite.}
+
+\gabcsnippet{(c3) LIke(H) as(H) the(H) harte(H) de(H)si(H)reth(H) the(H) wa(H)ter(H) brookes:(iv_) so(H) long(H)eth(H) my(H) soule(H) af(H)ter(H) the,(H) O(f) God.(ev_) (:)
+My(H) soule(H) is(H) a(H)thirst(H) for(H) god,(h) yea,(h) euen.(H) etc.(h+)}
+
+\section{Kyrie.}
+
+\gabcsnippet{(c3) LOrde(h) haue(h) mer(hV>)cy(f) vp(f)on(fV>) vs.(fv_) <c>iij.</c>()
+{Christ}(h) haue(h) mer(hV>)cy(f) vp(f)on(fV>) vs.(fv_) <c>iij.</c>()
+{Lord}(h) haue(h) mer(jV>)cy(h) vp(h)on(hV>) vs.(hv_) <c>ij.</c>()
+{Lord}(hV>) haue(g) mer(fV>)cy(g) vp(h)on(fV>) vs.(ev_) <c>j.</c>(:)}
+
+\section{The Collect.}
+
+\gabcsnippet{(c3) O(h) Mer(H)cy(H)full(H) (h+)}
+
+god the father of our lord Iesu Christ, who is the resurrection and the life: In whome whosoeuer beleueth shall liue, thoughe he dye: And whosoeuer lyueth, and beleueth in him, shall not dye eternally: who also taught vs (by his apostle Paule) not to be sorye as men with out hope for theim that slepe in him: We mekely beseche the (O father) to raise vs from the death of synne, vnto the life of righteousnes, that when we shall departe this life, we may slepe in him (as our hope is, this our brother doth) and at the generall resurrection in the last day, bothe we and this oure brother departed, receauyng agayn oure bodyes, and risyng agayn in thy most gracious fauoure: may with all thyne electe sayntes obtayne eternall ioy: Graunte this o lord god, by the meanes of our aduocate Iesus Christ, which with the holy ghost lyueth and reigneth one God
+
+{\gresetinitiallines{0}
+\gabcsnippet{(c3) for(H) e(h)uer.(dv_) <c>Aun.</c> {A}(h)men.(hv_) (::)}
+}
+
+\section{Sanctus.}
+
+\gabcsnippet{(cb4) HO(hV>)ly,(hV>) Ho(hV>)ly,(gV>) Ho(hV>)ly,(h) lord(h) god(h) of(g) hostes,(hv_)
+Heauen(hV>) and(h) earth(h) are(h) full(h) of(g) thy(h) glo(gV>)ry,(f)
+O(h)san(h)na(h) in(h) the(g) highest.(hv_) (:)}
+
+\gabcsnippet{(cb4) Bles(f.)sed(F) is(g) he(h) that(h) com(h.)meth(H) in(h) the(g) name(h) of(g) the(f) lorde,(ev_) O(d)san(fV>)na(g) in(h) the(g) highest.(gv_) (::)}
+
+\section{Agnus dei.}
+
+\gabcsnippet{(c3) O(e) Lambe(e) of(e) god(f)
+that(f) takest(f) a(f)way(f) the(e) synnes(f) of(d) the(e) world,(fv_)
+Haue(e) mer(f)cy(g) vp(e)on(fV>) vs.(ev_) (:)
+O(e) Lambe(e) of(e) god(f)
+that(f) takest(f) a(f)way(f) the(e) synnes(f) of(d) the(e) world,(fv_)
+Haue(e) mer(f)cy(g) vp(e)on(fV>) vs.(ev_) (:)
+O(e) Lambe(e) of(e) god(f)
+that(f) takest(f) a(f)way(f) the(e) synnes(f) of(d) the(e) world,(fv_)
+Graunt(g) vs(fV>) thy(e) peace.(ev_) (::)}
+
+\begin{center}
+  \markboth{}{}
+  \Huge
+  John Merbecke.
+  \par
+  
+  \clearpage
+
+  \thispagestyle{empty}
+  \vspace*{\fill}
+
+  \Large
+  \textsc{Imprinted by Richard\\
+  Grafton printer to the\\
+  Kinges Maiestie.}
+  \par
+
+  1550
+
+  \textit{Cum priuilegio ad imprimendum solum.}
+\end{center}
+
+\end{document}
